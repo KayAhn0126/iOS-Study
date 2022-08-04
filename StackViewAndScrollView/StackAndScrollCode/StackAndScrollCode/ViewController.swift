@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         var button = UIButton()
         button.setTitle("REMOVE", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(removeBlackView), for: .touchUpInside)
         return button
     }()
     
@@ -94,8 +95,18 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc func removeBlackView() {
+        guard let last = verticalStackView.arrangedSubviews.last else { return }
+        UIView.animate(withDuration: 0.3) {
+            last.isHidden = true
+        } completion: { (_) in
+            self.verticalStackView.removeArrangedSubview(last)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // MARK: View에 스크롤뷰와 버튼스택뷰 추가
         view.addSubview(scrollView)
         view.addSubview(horizontalStackView)
@@ -114,11 +125,6 @@ class ViewController: UIViewController {
         
         // MARK: Horizontal StackView AutoLayout 설정
         horizontalStackViewAutoLayout()
-        
-        
-        
     }
-    
-
 }
 
