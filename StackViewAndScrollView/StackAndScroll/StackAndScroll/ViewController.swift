@@ -30,7 +30,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func removeView(_ sender: UIButton) {
-        
+        guard let last = verticalView.arrangedSubviews.last else { return }
+        UIView.animate(withDuration: 0.3) {
+            last.isHidden = true
+        } completion: { (_) in
+            self.verticalView.removeArrangedSubview(last)
+        }
         
     }
 }
