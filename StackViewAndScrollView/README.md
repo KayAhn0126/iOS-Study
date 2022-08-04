@@ -12,6 +12,12 @@
     let label = UILabel(frame: view.bounds)
     ```
     
+
+    |( L ) view.frame / ( R ) view.bounds|
+    |:-:|
+    |![frame과bounds의 차이](https://user-images.githubusercontent.com/40224884/182875892-19d2e63f-84b2-4ccf-8330-c6ae73a4fa13.gif)|
+
+    
 2. completion 클로져에서 실행되는 코드는 REMOVE 버튼을 눌러 가장 마지막의 view를 삭제할 때, 천천히 누르면 삭제가 잘 되지만 빠르게 누른다면 viewSize도 버튼을 누른만큼 줄이지 못하는 문제를 발견했다. 정확히 어떤
     ```swift
     @IBAction func removeView(_ sender: UIButton) {
@@ -24,7 +30,10 @@
             }   
         }
     ```
-    ![REMOVEWITHERROR](https://user-images.githubusercontent.com/40224884/182873390-a7efb16d-d269-403f-865e-30fc2268ad5b.gif)
+    |삭제할 때 에러가 있는 화면|
+    |:-:|
+    |![REMOVEWITHERROR](https://user-images.githubusercontent.com/40224884/182873390-a7efb16d-d269-403f-865e-30fc2268ad5b.gif)|
+
     
     아직 정확하게 빠르게 눌렀을때 무엇 때문에 정상적(빠르게 눌러도 누른만큼 삭제되고 viewSize도 줄어드는 논리)으로 삭제되지 않는지 해결하지 못했다. 
     
@@ -39,7 +48,8 @@
     }
     ```
     위와같이 completion 클로져에 있던 코드를 완전히 빼서 last가 존재한다면 바로 실행할 수 있게 해주었다.
-    
-    ![REMOVEWITHNOERROR](https://user-images.githubusercontent.com/40224884/182873061-6cc0ef0c-cf48-46d1-88ba-2b268d4a6d50.gif)
+    |삭제할 때 정상적인 화면|
+    |:-:|
+    |![REMOVEWITHNOERROR](https://user-images.githubusercontent.com/40224884/182873061-6cc0ef0c-cf48-46d1-88ba-2b268d4a6d50.gif)|
     
     위와 같이 정상적으로 작동 하는것을 확인할 수 있다.
