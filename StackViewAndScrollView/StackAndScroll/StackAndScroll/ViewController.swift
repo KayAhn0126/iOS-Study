@@ -8,24 +8,33 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-
+    
+    var viewSize = 15
+    
     @IBOutlet weak var verticalView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        verticalView.spacing = 30
+        verticalView.spacing = 10
     }
 
     @IBAction func addView(_ sender: UIButton) {
         let view = UIView()
         view.backgroundColor = .black
         view.isHidden = true
-        view.heightAnchor.constraint(equalToConstant: CGFloat(30)).isActive = true
+        view.heightAnchor.constraint(equalToConstant: CGFloat(viewSize)).isActive = true
         verticalView.addArrangedSubview(view)
+        
         UIView.animate(withDuration: 0.3) {
             view.isHidden = false
+        } completion: { (_) in
+            let label = UILabel(frame: view.bounds)
+            label.numberOfLines = 0
+            label.textAlignment = .center
+            label.text = "CGFloat: \(self.viewSize) point(s)"
+            label.textColor = .orange
+            view.addSubview(label)
+            self.viewSize = self.viewSize + 5
         }
     }
     
@@ -35,8 +44,8 @@ class ViewController: UIViewController {
             last.isHidden = true
         } completion: { (_) in
             self.verticalView.removeArrangedSubview(last)
-        }
-        
+            self.viewSize = self.viewSize - 5
+        }   
     }
 }
 
