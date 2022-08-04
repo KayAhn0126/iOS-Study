@@ -9,6 +9,7 @@ import UIKit
 import Foundation
 
 class ViewController: UIViewController {
+    var viewSize = 15
     
     let scrollView: UIScrollView = {
         var scrollView = UIScrollView()
@@ -33,8 +34,7 @@ class ViewController: UIViewController {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
-        //stackView.backgroundColor = .orange
-        stackView.spacing = 30
+        stackView.spacing = 10
         return stackView
     }()
     
@@ -61,7 +61,6 @@ class ViewController: UIViewController {
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: horizontalStackView.topAnchor)
         ])
-        
     }
     
     func horizontalStackViewAutoLayout() {
@@ -88,20 +87,26 @@ class ViewController: UIViewController {
         view.backgroundColor = .black
         view.isHidden = true
         
-        view.heightAnchor.constraint(equalToConstant: CGFloat(30)).isActive = true
+        view.heightAnchor.constraint(equalToConstant: CGFloat(viewSize)).isActive = true
         verticalStackView.addArrangedSubview(view)
         UIView.animate(withDuration: 0.3) {
             view.isHidden = false
+        } completion: { (_) in
+            let label = UILabel(frame: view.bounds)
+            label.numberOfLines = 0
+            label.textAlignment = .center
+            label.text = "CGFloat: \(self.viewSize) point(s)"
+            label.textColor = .orange
+            view.addSubview(label)
+            self.viewSize = self.viewSize + 5
         }
     }
     
     @objc func removeBlackView() {
         guard let last = verticalStackView.arrangedSubviews.last else { return }
-        UIView.animate(withDuration: 0.3) {
-            last.isHidden = true
-        } completion: { (_) in
-            self.verticalStackView.removeArrangedSubview(last)
-        }
+        self.viewSize = self.viewSize - 5
+        self.verticalStackView.removeArrangedSubview(last)
+        last.isHidden = true
     }
     
     override func viewDidLoad() {
