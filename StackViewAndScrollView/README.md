@@ -1,5 +1,44 @@
 # ScrollView / StackView (README)
 
+## 📖 스택뷰에 뷰를 넣는 과정에서 배운점
+
+### 🌳 addSubview vs addArrangedSubview
+
+var subviews: [UIView] → UIView의 프로퍼티
+
+var arrangedSubviews: [UIView] →UIStackView의 프로퍼티
+
+### 🌳 stack view에 view를 추가할 땐!
+
+stackview에 view를 추가할땐 addArrangedSubview나 insertArrangedSubview을 사용하자!
+
+### 🌳 addSubview와 addArrangedSubview는 무엇이 다를까?
+
+addArrangedSubview()
+
+- view를 view Hierarchy에 추가하고 UIStackView의 프로퍼티인 arrangedSubviews 배열에도 추가.
+
+addSubview()
+
+- view Hierarchy에는 추가하지만 arrangedSubviews 배열이 아닌 subviews 배열에 추가한다.
+- addArrangedSubview method arranges its subviews based on its .axis, .alignment, .distribution and .spacing properties, as well as its frame.
+- 그러므로 addSubview 메서드를 사용하면 새로 추가된 뷰를 화면에 업데이트 하지 않아 보이지 않는다.
+
+### 🌳 ArrangedSubview와 removeFromSuperview의 차이점
+
+removeArrangedSubview
+
+- view Hierarchy에서는 삭제가 안되고 arrangedSubviews 배열에서만 삭제가 된다.
+- 나중에 해당 뷰를 사용하려면 arrangedSubviews 프로퍼티에는 없지만 view hierarchy에는 남아있어서 새로 생성할 필요가 없다.
+
+removeFromSuperview
+
+- view Hierarchy와 arrangedSubviews 프로퍼티 둘 모두 삭제 → 메모리와 스크린 둘 다에서 삭제.
+
+
+---
+
+
 ## 📖 직면한 문제 및 해결 과정
 1. verticalStackView에 검정색 view를 스택에 추가할 때, 해당 view의 높이를 나타내는 label을 view의 중간에 넣으려고 label을 생성했다. 처음에 시도한 방법은 UILabel을 생성할 때 view.frame위치에 넣어주었다. 하지만 예상과 달리 첫번째로 추가되는 view에만 label이 보이고 두번째부터 추가되는 view에는 label이 보이지 않았다. 문제를 찾다 UILabel의 위치를 설정해주는 곳에서 잘못된 점을 찾았다.
 
@@ -37,7 +76,7 @@
     
     아직 정확하게 빠르게 눌렀을때 무엇 때문에 정상적(빠르게 눌러도 누른만큼 삭제되고 viewSize도 줄어드는 논리)으로 삭제되지 않는지 해결하지 못했다. 
     
-    ### 다만 시도 해본것이 있다면..
+    ### 🌳 다만 시도 해본것이 있다면..
     
     ```swift
     @objc func removeBlackView() {
