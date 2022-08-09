@@ -42,7 +42,14 @@ removeFromSuperview
 ## 📖 직면한 문제 및 해결 과정
 1. verticalStackView에 검정색 view를 스택에 추가할 때, 해당 view의 높이를 나타내는 label을 view의 중간에 넣으려고 label을 생성했다. 처음에 시도한 방법은 UILabel을 생성할 때 view.frame위치에 넣어주었다. 하지만 예상과 달리 첫번째로 추가되는 view에만 label이 보이고 두번째부터 추가되는 view에는 label이 보이지 않았다. 문제를 찾다 UILabel의 위치를 설정해주는 곳에서 잘못된 점을 찾았다.
 
-    - 처음에 작성한 코드, view의 부모뷰인 verticalStackView에서의 위치를 나타내고 있다.
+    - 먼저 Frame과 Bounds의 차이를 알아보았다.
+        - Bounds → 자신의 위치 기준.
+            - 값을 준다면 해당 위치에서 다시 그림
+
+        - Frame → SuperView를 기준
+            - 값을 준다면 자신의 SuperView를 기준으로 다시 그림.
+
+    - 처음에 작성한 코드, view의 부모뷰인 verticalStackView에서의 위치를 나타내고 있다. 즉, verticalStackView내 view의 위치에 label을 생성하겠다는 의미
     ```swift
     let label = UILabel(frame: view.frame)
     ```
@@ -55,6 +62,8 @@ removeFromSuperview
     |( L ) view.frame / ( R ) view.bounds|
     |:-:|
     |![frame과bounds의 차이](https://user-images.githubusercontent.com/40224884/182875892-19d2e63f-84b2-4ccf-8330-c6ae73a4fa13.gif)|
+    
+    
 
     
 2. completion 클로져에서 실행되는 코드는 REMOVE 버튼을 눌러 가장 마지막의 view를 삭제할 때, 천천히 누르면 삭제가 잘 되지만 빠르게 누른다면 viewSize도 버튼을 누른만큼 줄이지 못하는 문제를 발견했다. 정확히 어떤
