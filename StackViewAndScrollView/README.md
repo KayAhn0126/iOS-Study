@@ -66,7 +66,7 @@ removeFromSuperview
     
 
     
-2. completion 클로져에서 실행되는 코드는 REMOVE 버튼을 눌러 가장 마지막의 view를 삭제할 때, 천천히 누르면 삭제가 잘 되지만 빠르게 누른다면 viewSize도 버튼을 누른만큼 줄이지 못하는 문제를 발견했다. 정확히 어떤
+2. completion 클로져에서 실행되는 코드는 REMOVE 버튼을 눌러 가장 마지막의 view를 삭제할 때, 천천히 누르면 삭제가 잘 되지만 빠르게 누른다면 viewSize도 버튼을 누른만큼 줄이지 못하는 문제를 발견했다.
     ```swift
     @IBAction func removeView(_ sender: UIButton) {
             guard let last = verticalView.arrangedSubviews.last else { return }
@@ -83,7 +83,8 @@ removeFromSuperview
     |![REMOVEWITHERROR](https://user-images.githubusercontent.com/40224884/182873390-a7efb16d-d269-403f-865e-30fc2268ad5b.gif)|
 
     
-    아직 정확하게 빠르게 눌렀을때 무엇 때문에 정상적(빠르게 눌러도 누른만큼 삭제되고 viewSize도 줄어드는 논리)으로 삭제되지 않는지 해결하지 못했다. 
+    remove 버튼을 빠르게 눌렀을때 무엇 때문에 정상적(빠르게 눌러도 누른만큼 삭제되고 viewSize도 줄어드는 논리)으로 삭제되지 않는지 아직 해결하지 못했다.
+        - UIView.animate 메서드의 0.3초동안 작업을 수행하는것 때문이라고 짐작하고 있다.
     
     ### 🌳 다만 시도 해본것이 있다면..
     
