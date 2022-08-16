@@ -1,6 +1,10 @@
 # ScrollView / StackView (README)
 
 # 📖 스택뷰에 뷰를 넣는 과정에서 배운점
+## 🍎 vertical scroll과 horizontal scroll 설정시 해야할 것
+- vertical scroll을 사용하고 싶다면 폭(width)는 화면의 폭과 같게 꽉 차게 설정해준다. 높이(height)는 priority 250으로 낮게 잡아준다.
+- horizontal scroll을 사용하고 싶다면 높이는 화면의 크기와 같게, 폭의 priority는 250으로 낮게 잡아준다.
+- priority 250으로 잡아주는 이유는 기본 높이는 설정이 되어있고 계속 추가되어서 늘어나게 된다면 자동으로 늘어날 수 있도록 하기 위함.
 
 ## 🍎 addSubview vs addArrangedSubview
 
