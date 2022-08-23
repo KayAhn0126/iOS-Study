@@ -1,10 +1,10 @@
 # ScrollView / StackView (README)
 
 # 📖 스택뷰에 뷰를 넣는 과정에서 배운점
-## 🍎 vertical scroll과 horizontal scroll 설정시 해야할 것
-- vertical scroll을 사용하고 싶다면 폭(width)는 화면의 폭과 같게 꽉 차게 설정해준다. 높이(height)는 priority 250으로 낮게 잡아준다.
-- horizontal scroll을 사용하고 싶다면 높이는 화면의 크기와 같게, 폭의 priority는 250으로 낮게 잡아준다.
-- priority 250으로 잡아주는 이유는 기본 높이는 설정이 되어있고 계속 추가되어서 늘어나게 된다면 자동으로 늘어날 수 있도록 하기 위함.
+## 🍎 vertical scroll과 horizontal scroll 설정시 해야할 것 (높이나 넓이가 동적으로 변하는 상황)
+- vertical scroll을 사용하고 싶다면 넓이(width)는 화면의 넓이과 같게 꽉 차게 설정해준다. 높이(height)는 화면의 전체의 높이만큼 설정하고, 높이의 priority는 250으로 낮게 잡아준다.
+- horizontal scroll을 사용하고 싶다면 높이는 화면의 크기와 같게, 넓이은 화면의 넓이만큼 설정하고, 넓이의 priority는 250으로 낮게 잡아준다.
+- 높이 또는 넓이의 priority 250으로 잡아주는 이유는 기본 값을 설정 함으로써 warning을 제거하고, scroll view에 계속 추가되어서 늘어나게 된다면 동적으로 늘어날 수 있도록 하기 위함.
 
 ## 🍎 addSubview vs addArrangedSubview
 
@@ -26,7 +26,7 @@ addSubview()
 
 - view Hierarchy에는 추가하지만 arrangedSubviews 배열이 아닌 subviews 배열에 추가한다.
 - addArrangedSubview method arranges its subviews based on its .axis, .alignment, .distribution and .spacing properties, as well as its frame.
-- 그러므로 addSubview 메서드를 사용하면 새로 추가된 뷰를 화면에 업데이트 하지 않아 보이지 않는다.
+- addArrangedSubview와 다르게 addSubview 메서드를 사용하면 새로 추가된 뷰를 화면에 업데이트 하지 않아 보이지 않는다.
 
 ## 🍎 ArrangedSubview와 removeFromSuperview의 차이점
 
