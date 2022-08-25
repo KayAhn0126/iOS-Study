@@ -13,19 +13,19 @@ protocol WhatAssistantNeedsToDo {
 
 class BossViewController: UIViewController {
 
-    var bossCommand: WhatAssistantNeedsToDo?
+    var handOver: WhatAssistantNeedsToDo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func tappedHomeButton(_ sender: UIButton) {
-        bossCommand?.drive(to: "Home")
+        handOver?.drive(to: "Home")
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tappedWorkButton(_ sender: UIButton) {
-        bossCommand?.drive(to: "Work")
+        handOver?.drive(to: "Work")
         dismiss(animated: true, completion: nil)
     }
 }

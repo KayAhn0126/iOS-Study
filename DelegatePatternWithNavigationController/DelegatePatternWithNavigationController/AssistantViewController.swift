@@ -18,7 +18,7 @@ class AssistantViewController: UIViewController {
 
     @IBAction func askBossButtonTapped(_ sender: UIButton) {
         if let bossVC = storyboard?.instantiateViewController(withIdentifier: "BossViewController") as? BossViewController {
-            bossVC.bossCommand = self
+            bossVC.handOver = self
             present(bossVC, animated: true, completion: nil)
         }
     }
