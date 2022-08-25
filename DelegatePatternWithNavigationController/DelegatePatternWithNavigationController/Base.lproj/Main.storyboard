@@ -1,24 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Assistant View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AssistantViewController" id="BYZ-38-t0r" customClass="AssistantViewController" customModule="DelegatePatternWithNavigationController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93b-bl-51S">
+                                <rect key="frame" x="0.0" y="732" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aBA-rb-jj8"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Click to ask him!"/>
+                                <connections>
+                                    <action selector="askBossButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JHT-3V-9km"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where do you wanna go Boss?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-Bc-Yic">
+                                <rect key="frame" x="0.0" y="114" width="414" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ot-is-2Hy">
+                                <rect key="frame" x="0.0" y="190.5" width="414" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m2Z-Bc-Yic" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0AL-fV-uW4"/>
+                            <constraint firstItem="93b-bl-51S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6UR-1N-Opp"/>
+                            <constraint firstItem="9ot-is-2Hy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6yZ-gC-iFl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m2Z-Bc-Yic" secondAttribute="trailing" id="Dgg-B3-xZe"/>
+                            <constraint firstItem="9ot-is-2Hy" firstAttribute="top" secondItem="m2Z-Bc-Yic" secondAttribute="bottom" constant="50" id="Eb5-RT-Vpb"/>
+                            <constraint firstItem="m2Z-Bc-Yic" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="azV-Ne-Grx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9ot-is-2Hy" secondAttribute="trailing" id="fLd-VW-txg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="93b-bl-51S" secondAttribute="bottom" constant="70" id="zIQ-xf-NsS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="93b-bl-51S" secondAttribute="trailing" id="zWT-Pi-bok"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="9ot-is-2Hy" id="H36-oN-vTl"/>
+                        <outlet property="chooseButton" destination="93b-bl-51S" id="idC-Si-kXX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-270" y="115"/>
+        </scene>
+        <!--Boss View Controller-->
+        <scene sceneID="ABU-Nb-5BU">
+            <objects>
+                <viewController storyboardIdentifier="BossViewController" id="N4h-ZN-HBl" customClass="BossViewController" customModule="DelegatePatternWithNavigationController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jie-Nr-kSK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey Boss! Pick one!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aq6-Dr-p1h">
+                                <rect key="frame" x="0.0" y="114" width="414" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPD-7r-9Z8">
+                                <rect key="frame" x="0.0" y="344" width="414" height="48"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Home">
+                                    <imageReference key="image" image="house.fill" catalog="system" renderingMode="hierarchical">
+                                        <hierarchicalColors>
+                                            <color systemColor="labelColor"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedHomeButton:" destination="N4h-ZN-HBl" eventType="touchUpInside" id="4jK-ne-gFf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdN-ge-Cax">
+                                <rect key="frame" x="0.0" y="592" width="414" height="48"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Work" subtitle="">
+                                    <imageReference key="image" image="building.2.fill" catalog="system" renderingMode="hierarchical">
+                                        <hierarchicalColors>
+                                            <color systemColor="labelColor"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedWorkButton:" destination="N4h-ZN-HBl" eventType="touchUpInside" id="nLX-yC-yey"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rPT-3q-Oua"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Aq6-Dr-p1h" firstAttribute="top" secondItem="rPT-3q-Oua" secondAttribute="top" constant="70" id="1J6-mr-pCG"/>
+                            <constraint firstItem="rPT-3q-Oua" firstAttribute="trailing" secondItem="QdN-ge-Cax" secondAttribute="trailing" id="5Wk-pI-UqF"/>
+                            <constraint firstItem="YPD-7r-9Z8" firstAttribute="leading" secondItem="rPT-3q-Oua" secondAttribute="leading" id="6bi-vx-VLo"/>
+                            <constraint firstItem="YPD-7r-9Z8" firstAttribute="top" secondItem="Aq6-Dr-p1h" secondAttribute="bottom" constant="200" id="Pbv-Em-d1b"/>
+                            <constraint firstItem="Aq6-Dr-p1h" firstAttribute="leading" secondItem="rPT-3q-Oua" secondAttribute="leading" id="VA1-uz-Ig3"/>
+                            <constraint firstItem="QdN-ge-Cax" firstAttribute="leading" secondItem="rPT-3q-Oua" secondAttribute="leading" id="iEX-cA-vCb"/>
+                            <constraint firstItem="rPT-3q-Oua" firstAttribute="trailing" secondItem="Aq6-Dr-p1h" secondAttribute="trailing" id="jHO-hY-N5V"/>
+                            <constraint firstItem="QdN-ge-Cax" firstAttribute="top" secondItem="YPD-7r-9Z8" secondAttribute="bottom" constant="200" id="n7Q-hm-Ggh"/>
+                            <constraint firstItem="rPT-3q-Oua" firstAttribute="trailing" secondItem="YPD-7r-9Z8" secondAttribute="trailing" id="seq-Ws-kD6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SnG-Qm-x0y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="735" y="115"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="building.2.fill" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
