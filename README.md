@@ -6,8 +6,8 @@
 | [화면 전환 방법](https://github.com/KayAhn0126/AppPractice/tree/main/ScreenTransition) | 직접 호출, 내비게이션 컨트롤러를 이용한 호출 | 화면 전환에 대해 직접 실험 및 정리 |
 | [ScrollView / StackView](https://github.com/KayAhn0126/AppPractice/tree/main/StackViewAndScrollView) | 스크롤뷰와 스택뷰를 스토리보드와 코드로 구현 | UI구현에서 가장 많이 사용될 것 같아 연습 |
 | [Delegate Pattern](https://github.com/KayAhn0126/AppPractice/tree/main/DelegatePattern) | PartyDirector가 PartyWorker에게 일을 위임하는 코드 구현 | UI를 구현 할 때 delegate 패턴이 자주 나와 테스트 및 정리 |
-| | | |
-| | | |
+| [Delegate Pattern With Role Play](https://github.com/KayAhn0126/AppPractice/tree/main/DelegatePatternWithRolePlay)| 보스가 비서에게 해야할 일을 위임하는 코드 구현| Delegate Pattern 연습|
+| [UICollectionViewFlowLayout의 한계 및 대체재](https://github.com/KayAhn0126/AppPractice/blob/main/WhyCompositionalLayout.md)| 복잡한 뷰 및 데이터 일관성을 위한 Compositional Layout 공부| 기존 FlowLayout과 다른점 정리 |
 | | | |
 | | | |
 | | | |
