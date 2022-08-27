@@ -10,7 +10,9 @@
     3. 대리자 클래스에서 위임자로부터 위임을 받는다.
     4. 위임자가 오더하면 대리자가 일을 한다.
 - 그림 : 
-    ![DelegatePatternPractice](https://user-images.githubusercontent.com/40224884/186410123-ebc994c4-bc24-4910-939c-9420bdb37b42.png)
+    ![DelegatePatternPractice](https://i.imgur.com/gK7euN2.png)
+- 간단한 설명 :
+    - 위임자 클래스에서 self는 위임자이다.
 
 ## 🍎 코드를 부분 부분 살펴보기
 
