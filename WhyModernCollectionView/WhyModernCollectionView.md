@@ -1,4 +1,4 @@
-# UICollectionViewDiffableDataSource 그리고 UICollectionViewCompositional Layout의 등장
+# UICollectionViewDiffableDataSource 그리고 UICollectionViewCompositional Layout의 등장
 
 ## 🍎 2019 WWDC에서 발표한 DiffableDataSource 그리고 Compositional Layout
 - 왜 나왔을까?
