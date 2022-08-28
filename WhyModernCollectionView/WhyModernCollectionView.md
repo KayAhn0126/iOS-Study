@@ -7,9 +7,7 @@
 - 기존 UICollectionViewDataSource를 사용할때 생기는 문제점을 보완, 개선하기 위해.
     - ex) collectionView의 데이터 구성하기 위해 Controller에게 numberOfSection을 묻는다. controller는 데이터를 채우기 위해 API통신을 요청하고 응답을 받으면 collectionView에게 변화를 알린다. 하지만 controller에서 받아온 numberOfSection의 수와 현재 UI가 가지고 있는 numberOfSection수가 다르다면 **앱이 강제로 종료되는 경우**가 있다.
 - 데이터가 변경 될때마다 수동으로 collectionView.reloadData()를 이용해 위의 문제를 해결할수 있다. 하지만 뚝뚝 끊기는 UI는 **사용자에게 좋은 경험(UX)을 가져다 주지 못한다.**
-    |              DataSource              |         Diffable DataSource          |
-    |:------------------------------------:|:------------------------------------:|
-    | ![](https://i.imgur.com/EsozbVQ.gif) | ![](https://i.imgur.com/5QRzYRJ.gif) |
+- [DataSource](https://github.com/KayAhn0126/AppPractice/blob/main/WhyModernCollectionView/WithDataSource.gif)와 [Diffable DataSource](https://github.com/KayAhn0126/AppPractice/blob/main/WhyModernCollectionView/WithDiffableDataSource.gif) GIF 확인.
 - **collectionView를 그리기 위한 데이터를 관리하고 UI를 업데이트 하는 역할.**
 - **DataSource와 달리 데이터가 달라진 부분을 추적하여 자연스럽게 UI를 업데이트 한다. (새로운 부분만 다시 그린다.)**
 - 즉, DiffableDataSource는 collectionView.reloadData()메서드 없이 UI를 업데이트(with animation) 하고, 업데이트 과정에서 생기는 crash를 예방한다.
