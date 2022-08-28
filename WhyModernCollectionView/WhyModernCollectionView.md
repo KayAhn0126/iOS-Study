@@ -9,7 +9,7 @@
 - 데이터가 변경 될때마다 수동으로 collectionView.reloadData()를 이용해 위의 문제를 해결할수 있다. 하지만 뚝뚝 끊기는 UI는 **사용자에게 좋은 경험(UX)을 가져다 주지 못한다.**
     |              DataSource              |         Diffable DataSource          |
     |:------------------------------------:|:------------------------------------:|
-    | ![](https://i.imgur.com/HbPwdJe.gif) | ![](https://i.imgur.com/AM0I71f.gif) |
+    | ![](https://i.imgur.com/EsozbVQ.gif) | ![](https://i.imgur.com/5QRzYRJ.gif) |
 - **collectionView를 그리기 위한 데이터를 관리하고 UI를 업데이트 하는 역할.**
 - **DataSource와 달리 데이터가 달라진 부분을 추적하여 자연스럽게 UI를 업데이트 한다. (새로운 부분만 다시 그린다.)**
 - 즉, DiffableDataSource는 collectionView.reloadData()메서드 없이 UI를 업데이트(with animation) 하고, 업데이트 과정에서 생기는 crash를 예방한다.
