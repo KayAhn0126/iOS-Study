@@ -39,9 +39,9 @@
 | [Apple FrameWork](https://github.com/KayAhn0126/AppleFramework)| 컬렉션 뷰, 내비게이션 컨트롤러를 사용한 애플의 프레임 워크 |
 | [Insta Search](https://github.com/KayAhn0126/InstaSearch)| 컬렉션 뷰, 내비게이션 컨트롤러, 탭 바 컨트롤러, 서치 컨트롤러 사용한 SNS 앱 |
 | [Nike Running Club](https://github.com/KayAhn0126/NRC)| 컬렉션 뷰, 페이지 컨트롤 사용한 운동 앱|
-| | |
-| | |
-| | |
+| [Apple FrameWork2](https://github.com/KayAhn0126/AppleFrameworkWithCompositionalLayout)| DiffableDataSource, Snapshot, Compositional Layout을 사용한 애플 프레임 워크|
+| [MeditationContentsList](https://github.com/KayAhn0126/MeditationContentsList)| DiffableDataSource, Snapshot, Compositional Layout 및 Snapshot의 활용, Bool 타입의 toggle() 메서드를 사용한 명상 컨텐츠 리스트|
+| [SpotifyPayWall](https://github.com/KayAhn0126/SpotifyPayWall)| DiffableDataSource, Snapshot, Compositional Layout, Page Control, NSCollectionLayoutSection - orthogonalScrollingBehavior 사용법|
 | | |
 | | |
 | | |
