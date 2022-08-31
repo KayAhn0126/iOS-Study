@@ -30,12 +30,34 @@
 - **Layout > Section > Group >Item**
 ![](https://i.imgur.com/UmMXBDU.png)
 
+## 🍎 사이즈 관련 헷갈리는 item, group, section 분석.
 
-## 🍎 요약
-- **기존 UICollectionView 에서 Data, Presentation 구현 방법은 에러가 생길수 있음**
-    - AS-IS : UICollectionViewDataSource
-    - TO-BE : UICollectionViewDiffableDataSource
+### 아이템
+```swift
+let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+let item = NSCollectionLayoutItem(layoutSize: itemSize)
+```
+- itemSize내 width와 height를 정해주는 부분에서 .fractional(width/height)는 item을 담고있는 group의 사이즈를 기반으로 배수를 의미한다.
+- 즉, 위의 코드가 말하고 있는것은..
+    - 아이템 하나의 가로 사이즈는 그룹의 가로 * 1, 세로 사이즈는 그룹의 세로 * 1 이다.
 
-- **기존 UICollectionView 에서 Flowlayout으로 복잡한 화면 구현시, 난이도가 갑자기 올라감**
-    - AS-IS : UICollectionViewFlowLayout
-    - TO-BE : UICollectionViewCompositionalLayout
+### 그룹
+```swift
+let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .absolute(200))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+```
+- groupSize내 width와 height를 정해주는 부분에서 그룹의 가로는 섹션의 가로 * 0.8, .absolute(200)은 세로를 200 points로 고정하겠다는 의미.
+- **그룹을 생성할때 .horizontal은 아이템을 그룹에 넣어줄때 가로로 넣을것인지 세로로 넣을것인지 정해주는것이다.**
+
+### 섹션
+- section은 기본적으로 세로 스크롤이다. 왜?
+- section의 orthogonalScrollingBehavior 프로퍼티의 기본값이 .none이기 때문.
+- orthogonalScrollingBehavior은 UICollectionLayoutSectionOrthogonalScrollingBehavior 타입
+- UICollectionLayoutSectionOrthogonalScrollingBehavior타입은 enum
+    - case none = 0
+    - case continuous = 1
+    - case continuousGroupLeadingBoundary = 2
+    - case paging = 3
+    - case groupPaging = 4
+    - case groupPagingCentered = 5
+- 필요에 따라 사용하면 된다.
