@@ -1,7 +1,7 @@
-# 🍎 클로저 정리
+# 클로저 정리
 - 헷갈리고 어려운것은 피하지말고 정복하자!
 
-## parameter와 return 둘다 없는 클로저
+## 🍎 parameter와 return 둘다 없는 클로저
 ```swift
 let closure = { () -> () in
     print("Closure")
@@ -15,7 +15,7 @@ let closure = {
 }
 ```
 
-## parameter는 없지만 return이 있는 클로저
+## 🍎 parameter는 없지만 return이 있는 클로저
 ```swift
 let closure = { () -> String in
     return "Hello World"
@@ -30,7 +30,7 @@ let closure = {
 ```
 
 
-## parameter는 있지만 return이 없는 클로저
+## 🍎 parameter는 있지만 return이 없는 클로저
 ```swift
 let closure = { (name: String) -> () in
     print("\(name)")              
@@ -51,7 +51,7 @@ let closure = { (name: String) in
 
 
 
-## parameter와 return type 둘 다 있는 클로저
+## 🍎 parameter와 return type 둘 다 있는 클로저
 ```swift
 let closure = { (name: String) -> String in
     return "\(name)"              
@@ -64,14 +64,14 @@ let closure = { (name: String) in
     return "\(name)"              
 }
 ```
-## 기본 클로저 요약
+## 🍎 기본 클로저 요약
 - parameter는 비어있을때만, return type은 언제든지 지워도 됨
 ---
 
 
 # 약간 복잡한 클로저
 
-## 함수의 파라미터로 들어오는 클로저
+## 🍎 함수의 파라미터로 들어오는 클로저
 ```swift
 func someFunc(closure: () -> ()) {
     closure()
@@ -91,7 +91,7 @@ someFunc(closure: {
 })
 ```
 
-## 위의 과정을 자세하게 풀어 보기
+## 🍎 위의 과정을 자세하게 풀어 보기
 ```swift
 func someFunc(closure: () -> ()) {
     closure()
@@ -113,7 +113,7 @@ someFunc(closure: someOtherFunc)
 - 필요없다면 위처럼 바로 호출.
 ---
 
-## 함수의 반환 타입으로 사용하는 클로저
+## 🍎 함수의 반환 타입으로 사용하는 클로저
 ```swift
 func doSomething() -> () -> () {
     return { () -> () in
@@ -146,7 +146,7 @@ closure()
 
 # 극한 클로져 살펴보기
 
-## 클로저 직접 실행
+## 🍎 클로저 직접 실행
 - 클로저를 소괄호로 감싸고 마지막에 호출 구문인 ()를 추가해주기.
 ```swift
 ({ () -> () in
