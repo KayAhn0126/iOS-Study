@@ -11,8 +11,8 @@ let alert = UIAlertController(title: "Your Title", message: "Your Message", pref
 |:-:|:-:|
 | ![](https://i.imgur.com/CZLZqN7.png) | ![](https://i.imgur.com/ck1JaSp.png)|
 
-**alert** - 화면 중앙에 나타남 **(2개 이하 선택지)**
-**actionSheet** - 화면 하단에 나타남 **(3개 이상 선택지)**
+- **alert** - 화면 중앙에 나타남 **(2개 이하 선택지)**
+- **actionSheet** - 화면 하단에 나타남 **(3개 이상 선택지)**
 
 ### 2. 필요에 따라 버튼 만들기
 - 버튼이 눌렸을때 어떤 일을 수행해야 한다면 후행 클로져 내부 구현
