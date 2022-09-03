@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A06D71C28B22C2F000B75F7 /* CollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A06D71C28B22C2F000B75F7 /* HowToRemoveStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowToRemoveStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A06D71F28B22C2F000B75F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A06D72128B22C2F000B75F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6A06D72328B22C2F000B75F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		6A06D71D28B22C2F000B75F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A06D71C28B22C2F000B75F7 /* CollectionView.app */,
+				6A06D71C28B22C2F000B75F7 /* HowToRemoveStoryboard.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,15 +61,16 @@
 				6A06D72A28B22C31000B75F7 /* LaunchScreen.storyboard */,
 				6A06D72D28B22C31000B75F7 /* Info.plist */,
 			);
-			path = CollectionView;
+			name = CollectionView;
+			path = HowToRemoveStoryboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6A06D71B28B22C2F000B75F7 /* CollectionView */ = {
+		6A06D71B28B22C2F000B75F7 /* HowToRemoveStoryboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A06D73028B22C31000B75F7 /* Build configuration list for PBXNativeTarget "CollectionView" */;
+			buildConfigurationList = 6A06D73028B22C31000B75F7 /* Build configuration list for PBXNativeTarget "HowToRemoveStoryboard" */;
 			buildPhases = (
 				6A06D71828B22C2F000B75F7 /* Sources */,
 				6A06D71928B22C2F000B75F7 /* Frameworks */,
@@ -79,9 +80,9 @@
 			);
 			dependencies = (
 			);
-			name = CollectionView;
+			name = HowToRemoveStoryboard;
 			productName = CollectionView;
-			productReference = 6A06D71C28B22C2F000B75F7 /* CollectionView.app */;
+			productReference = 6A06D71C28B22C2F000B75F7 /* HowToRemoveStoryboard.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +100,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6A06D71728B22C2F000B75F7 /* Build configuration list for PBXProject "CollectionView" */;
+			buildConfigurationList = 6A06D71728B22C2F000B75F7 /* Build configuration list for PBXProject "HowToRemoveStoryboard" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +113,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6A06D71B28B22C2F000B75F7 /* CollectionView */,
+				6A06D71B28B22C2F000B75F7 /* HowToRemoveStoryboard */,
 			);
 		};
 /* End PBXProject section */
@@ -276,7 +277,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CollectionView/Info.plist;
+				INFOPLIST_FILE = HowToRemoveStoryboard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -286,7 +287,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CollectionView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HowToRemoveStoryboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -302,7 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CollectionView/Info.plist;
+				INFOPLIST_FILE = HowToRemoveStoryboard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -312,7 +313,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.CollectionView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HowToRemoveStoryboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -323,7 +324,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6A06D71728B22C2F000B75F7 /* Build configuration list for PBXProject "CollectionView" */ = {
+		6A06D71728B22C2F000B75F7 /* Build configuration list for PBXProject "HowToRemoveStoryboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A06D72E28B22C31000B75F7 /* Debug */,
@@ -332,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A06D73028B22C31000B75F7 /* Build configuration list for PBXNativeTarget "CollectionView" */ = {
+		6A06D73028B22C31000B75F7 /* Build configuration list for PBXNativeTarget "HowToRemoveStoryboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A06D73128B22C31000B75F7 /* Debug */,
