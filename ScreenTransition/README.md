@@ -1,6 +1,6 @@
-# 🍎 화면 전환 방법 정리
+# 화면 전환 방법 정리
 
-## 📖 1. 뷰 컨트롤러 직접 호출에 의한 화면 전환 (프레젠테이션 방식)
+## 🍎 1. 뷰 컨트롤러 직접 호출에 의한 화면 전환 (프레젠테이션 방식)
 ### 새로운 화면 띄우기
 - 모든 뷰 컨트롤러는 UIViewController 클래스를 상속받는다. 즉, 이 클래스에서 정의된 present(_: animated:) 메서드를 사용하면 화면을 전환 할 수 있다.
 - 기본 형태
@@ -31,9 +31,11 @@
         self.presentingViewController?.dismiss(animated: true)
     }
     ```
+    - presentingViewController -> 현재 VC를 띄우고 있는 VC
+    - presentedViewController -> 현재 띄워진 VC
 
 
-## 📖 2. 내비게이션 컨트롤러를 이용한 화면 전환 
+## 🍎 2. 내비게이션 컨트롤러를 이용한 화면 전환 
 - 항상 콘텐츠 계층 구조의 시작점 역할을 하는 뷰 컨트롤러와 함께 다니는데 이를 root view controller라고 한다.
 ### 네비게이션 컨트롤러를 추가하는 방법은 크게 두 가지
 1. 라이브러리를 통해 Navigation Controller를 추가하는 방법.
@@ -63,6 +65,6 @@
     ![](https://i.imgur.com/W5MsVcJ.gif)
 
     
-## Embed In 기능
+## 🍎 Embed In 기능
 - 기존 요소들 앞에 갑자기 툭 꽂아 넣는다는 점에서 낙하산이라고 생각하면 된다.
 - 이 기능은 내비게이션 컨트롤러 뿐만 아니라 탭바 컨트롤러도 추가가 가능하고 선택된 대상에 따라 뷰나 스크롤 뷰 등의 객체도 삽입 가능.
