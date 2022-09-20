@@ -1,3 +1,5 @@
+###### tags: `AppPractice`
+
 # App Practices
 
 |이름|설명|이유|
@@ -30,7 +32,7 @@
 | [Combine](https://github.com/KayAhn0126/Combine)| 기본 컴바인 정리 및 실습|
 | [Network](https://github.com/KayAhn0126/Network)| 네트워크 정리 및 실습|
 | [Metatype](https://github.com/KayAhn0126/AppPractice/tree/main/Metatype)| 메타 타입 정리|
-| | |
+| [Generic](https://github.com/KayAhn0126/AppPractice/tree/main/Generic)| 제네릭 정리|
 | | |
 | | |
 | | |
