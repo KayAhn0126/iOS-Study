@@ -1,5 +1,3 @@
-###### tags: `AppPractice`
-
 # App Practices
 
 |이름|설명|이유|
@@ -45,18 +43,18 @@
 | 프로젝트 | 설명 |
 |:-:|:-:|
 | [Simple Weather](https://github.com/KayAhn0126/SimpleWeather)| 이미지뷰와 레이블, 스택뷰를 사용한 랜덤 날씨 제조 앱 |
-| [Stock Rank](https://github.com/KayAhn0126/StockRank)| 로컬 데이터를 기반 및 컬렉션 뷰를 사용한 주식 순위 앱 |
-| [Chat List](https://github.com/KayAhn0126/ChatList)| 컬렉션 뷰, DateFormatter, sort를 사용한 채팅 리스트 앱 |
-| [Apple FrameWork](https://github.com/KayAhn0126/AppleFramework)| 컬렉션 뷰, 내비게이션 컨트롤러를 사용한 애플의 프레임 워크 |
-| [Insta Search](https://github.com/KayAhn0126/InstaSearch)| 컬렉션 뷰, 내비게이션 컨트롤러, 탭 바 컨트롤러, 서치 컨트롤러를 사용한 SNS 앱 |
-| [Nike Running Club](https://github.com/KayAhn0126/NRC)| 컬렉션 뷰, 페이지 컨트롤을 사용한 운동 앱|
+| [Stock Rank](https://github.com/KayAhn0126/StockRank)| 로컬 데이터를 기반, UICollectionView를 사용한 주식 순위 앱 |
+| [Chat List](https://github.com/KayAhn0126/ChatList)| UICollectionView, DateFormatter, sort를 사용한 채팅 리스트 앱 |
+| [Apple FrameWork](https://github.com/KayAhn0126/AppleFramework)| UICollectionView, Navigation Controller를 사용한 애플의 프레임 워크 |
+| [Insta Search](https://github.com/KayAhn0126/InstaSearch)| UICollectionView, Navigation Controller, 탭 바 컨트롤러, 서치 컨트롤러를 사용한 SNS 앱 |
+| [Nike Running Club](https://github.com/KayAhn0126/NRC)| UICollectionView, Page Controller를 사용한 운동 앱|
 | [Apple FrameWork With Compositional Layout](https://github.com/KayAhn0126/AppleFrameworkWithCompositionalLayout)| DiffableDataSource, Snapshot, Compositional Layout을 사용한 애플 프레임 워크|
 | [MeditationContentsList](https://github.com/KayAhn0126/MeditationContentsList)| DiffableDataSource, Snapshot, Compositional Layout 및 Snapshot의 활용, Bool 타입의 toggle() 메서드를 사용한 명상 컨텐츠 리스트|
 | [SpotifyPayWall](https://github.com/KayAhn0126/SpotifyPayWall)| DiffableDataSource, Snapshot, Compositional Layout, Page Control, NSCollectionLayoutSection 사용한 음악앱 및 orthogonalScrollingBehavior 사용법|
 | [Apple Framework With Modal](https://github.com/KayAhn0126/AppleFrameworkWithModal)| DiffableDataSource, Snapshot, Compositional Layout, Modal-presentation, SafariServices를 사용한 애플 프레임 워크 설명 앱|
-| [Meditation Contents List With Navigation](https://github.com/KayAhn0126/MeditationContentsListWithNavigation)| DiffableDataSource, Snapshot with two sections, Compositional Layout, Navigation Controller, UICollectionReusableView|
-| [GithubUserProfile](https://github.com/KayAhn0126/GithubUserProfile)| Navigation Controller, UISearchController, Combine, Kingfisher, Xcode Package Manager |
-| | |
+| [Meditation Contents List With Navigation](https://github.com/KayAhn0126/MeditationContentsListWithNavigation)| DiffableDataSource, Snapshot with two sections, Compositional Layout, Navigation Controller, UICollectionReusableView를 사용한 명상 컨텐츠 리스트 (상세 뷰 포함)|
+| [GithubUserProfile](https://github.com/KayAhn0126/GithubUserProfile)| Navigation Controller, UISearchController, Combine, Kingfisher, Xcode Package Manager를 사용한 Github 사용자 프로필 검색|
+| [GithubUserSearch](https://github.com/KayAhn0126/GithubUserSearch)| UICollectionView, DiffableDataSource, Snapshot, Compositional Layout, Navigation Controller, UISearchController, Combine, Kingfisher, Xcode package Manager를 사용한 Github사용자 아이디 검색 및 프로필 제공|
 | | |
 | | |
 | | |
