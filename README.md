@@ -4,6 +4,7 @@
 |:-:|:-:|:-:|
 | [스토리보드 없이 프로젝트 시작하기](https://github.com/KayAhn0126/AppPractice/blob/main/HowToRemoveStoryboard/HowToRemoveStoryboard.md) | 스토리보드 삭제 방법| 코드로 UI를 구성시 불필요한 스토리보드 삭제 방법 메모 |
 | [화면 전환 방법](https://github.com/KayAhn0126/AppPractice/tree/main/ScreenTransition) | 직접 호출, 내비게이션 컨트롤러를 이용한 호출 | 화면 전환에 대해 직접 실험 및 정리 |
+| [화면간 데이터 전달 방법](https://github.com/KayAhn0126/AppPractice/tree/main/DataTransferBetweenScreens)| 화면간 데이터 전달 방법 정리| 양방향으로 전달하는 방법 공부 |
 | [Alert 띄우기](https://github.com/KayAhn0126/AppPractice/tree/main/Alert)| HIG과 스타일에 대한 정리 | Notification Center 구현 중 공부 후 정리 |
 | [ScrollView / StackView](https://github.com/KayAhn0126/AppPractice/tree/main/StackViewAndScrollView) | 스크롤뷰와 스택뷰를 스토리보드와 코드로 구현 | UI구현에서 가장 많이 사용될 것 같아 연습 |
 | [Delegate Pattern](https://github.com/KayAhn0126/AppPractice/tree/main/DelegatePattern) | PartyDirector가 PartyWorker에게 일을 위임하는 코드 구현 | UI를 구현 할 때 delegate 패턴이 자주 나와 테스트 및 정리 |
