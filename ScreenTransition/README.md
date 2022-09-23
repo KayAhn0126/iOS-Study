@@ -68,3 +68,15 @@
 ## 🍎 Embed In 기능
 - 기존 요소들 앞에 갑자기 툭 꽂아 넣는다는 점에서 낙하산이라고 생각하면 된다.
 - 이 기능은 내비게이션 컨트롤러 뿐만 아니라 탭바 컨트롤러도 추가가 가능하고 선택된 대상에 따라 뷰나 스크롤 뷰 등의 객체도 삽입 가능.
+
+## 🍎 화면 전환 애니메이션 설정 하기
+
+```swift
+// 화면 전환 애니메이션 설정
+guard let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "secondViewControllerID") as? SecondViewController else { return }
+// 화면 전환 애니메이션 설정
+secondViewController.modalTransitionStyle = .coverVertical
+// 전환된 화면이 보여지는 방법 설정 (fullScreen)
+secondViewController.modalPresentationStyle = .fullScreen
+self.present(secondViewController, animated: true, completion: nil)
+```
