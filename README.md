@@ -56,6 +56,7 @@
 | [SpotifyPayWall](https://github.com/KayAhn0126/SpotifyPayWall)| DiffableDataSource, Snapshot, Compositional Layout, Page Control, NSCollectionLayoutSection 사용한 음악앱 및 orthogonalScrollingBehavior 사용법|
 | [Apple Framework With Modal](https://github.com/KayAhn0126/AppleFrameworkWithModal)| DiffableDataSource, Snapshot, Compositional Layout, Modal-presentation, SafariServices를 사용한 애플 프레임 워크 설명 앱|
 | [Meditation Contents List With Navigation](https://github.com/KayAhn0126/MeditationContentsListWithNavigation)| DiffableDataSource, Snapshot with two sections, Compositional Layout, Navigation Controller, UICollectionReusableView를 사용한 명상 컨텐츠 리스트 (상세 뷰 포함)|
+| [Apple Framework With Modal & Combine](https://github.com/KayAhn0126/AppleFrameworkWithModalAndCombine)| DiffableDataSource, Snapshot, Compositional Layout, Modal-presentation, SafariServices 및 Combine으로 파이프라인 구축|
 | [GithubUserProfile](https://github.com/KayAhn0126/GithubUserProfile)| Navigation Controller, UISearchController, Combine, Kingfisher, Xcode Package Manager를 사용한 Github 사용자 프로필 검색|
 | [GithubUserSearch](https://github.com/KayAhn0126/GithubUserSearch)| UICollectionView, DiffableDataSource, Snapshot, Compositional Layout, Navigation Controller, UISearchController, Combine, Kingfisher, Xcode package Manager를 사용한 Github사용자 아이디 검색 및 프로필 제공|
 | | |
