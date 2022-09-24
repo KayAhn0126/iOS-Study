@@ -141,3 +141,21 @@ class MainViewController: UIViewController {
 }
 ```
 
+### UserDefaults에 대해 알아둘 점.
+- UserDefaults 객체는 인메모리 캐싱(In - memory Caching) 메커니즘을 사용한다.
+- 인메모리 캐싱 정의
+    - 실제 저장된 위치에서 데이터를 매번 새로 읽어 들이는 것이 아닌 한번 읽은 데이터를 메모리에 저장해 두고 재사용하는 것
+- 인메모리 캐싱 장단점
+    - 장점: 한번 읽은 데이터를 메모리에 저장해 두고 재사용해 성능 향상
+    - 단점: 기본 저장소와 메모리에 있는 데이터가 일치하지 않을 가능성 있음.
+- 데이터 통일을 위해 UserDefaults에 데이터를 저장한 후, 캐싱된 데이터를 갱신하여 양쪽 데이터를 일치시켜 주어야 한다.
+- 이를 동기화 처리 또는 싱크 처리라고 한다.
+- synchronize()메서드 사용.
+```swift
+let ud = UserDefaults.standard
+
+ud.set("Kay", forKey: "name")
+ud.set(30, forKey: "age") // forKey의 타입은 항상 String.
+ud.synchronize() // 싱크처리
+```
+
