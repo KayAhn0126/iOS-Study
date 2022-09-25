@@ -35,7 +35,7 @@
 | [Metatype](https://github.com/KayAhn0126/AppPractice/tree/main/Metatype)| 메타 타입 정리|
 | [Generic](https://github.com/KayAhn0126/AppPractice/tree/main/Generic)| 제네릭 정리|
 | [@propertyWrapper](https://github.com/KayAhn0126/AppPractice/tree/main/PropertyWrapper)| [기본 propertyWrapper 사용법 정리](https://github.com/KayAhn0126/AppPractice/blob/main/PropertyWrapper/PropertyWrapper.playground/Pages/Basic%20PropertyWrapper.xcplaygroundpage/Contents.swift) <br> [wrapped된 property에 초기값 넣는 방법 정리](https://github.com/KayAhn0126/AppPractice/blob/main/PropertyWrapper/PropertyWrapper.playground/Pages/PropertyWrapper%20%26%20Initializer.xcplaygroundpage/Contents.swift) <br> [projectedValue를 통해 새로운 값을 저장하기 전, 조정이 있었는지 확인하기](https://github.com/KayAhn0126/AppPractice/blob/main/PropertyWrapper/PropertyWrapper.playground/Pages/ProjectedValue.xcplaygroundpage/Contents.swift)|
-| | |
+| [@Sendable](https://github.com/KayAhn0126/AppPractice/tree/main/SendableKeyword)| [Error 열거형 선언 / 데이터 수신 여부에 따른 프로세스(escaping)](https://github.com/KayAhn0126/Network/blob/main/Network%20in%20iOS.playground/Pages/Fetch%20Method.xcplaygroundpage/Contents.swift)에서 URLSession내 dataTask 메서드 분석 중 발견한 @Sendable 키워드 정리|
 | | |
 | | |
 | | |
