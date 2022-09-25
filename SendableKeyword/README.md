@@ -23,7 +23,7 @@ function과 closure가 캡쳐하는 모든 값들은 sendable 해야한다
 ## 🍎 생각 정리 시작
 - [Error 열거형 선언 / 데이터 수신 여부에 따른 프로세스(escaping)](https://github.com/KayAhn0126/Network/blob/main/Network%20in%20iOS.playground/Pages/Fetch%20Method.xcplaygroundpage/Contents.swift)내 NetworkService 클래스의 fetchProfile 메서드를 보자.
 
-```swift=
+```swift
 func fetchProfile(userName: String, completion: @escaping (Result<GithubProfile, Error>) -> Void) {
         let url = URL(string: "https://api.github.com/users/\(userName)")!
         let task = session.dataTask(with: url) { data, response, error in
@@ -55,7 +55,7 @@ func fetchProfile(userName: String, completion: @escaping (Result<GithubProfile,
 ```
 
 - fecthProfile 메서드를 호출하는 곳도 살펴보자
-```swift=
+```swift
 let network = NetworkService(configuration: .default)
 network.fetchProfile(userName: "kayahn0126") { result in
     switch result {
@@ -81,14 +81,14 @@ function과 closure가 캡쳐하는 모든 값들은 sendable 해야한다.
 - 즉 (Data?, URLResponse?, Error?) -> Void 클로져 실행 도출된 결과값은 sendable하다는 이야기이다.
 - 현재 코드에서 (Data?, URLResponse?, Error?) -> Void 클로져가 실행되고 남은 결과값은 아래와 같다.
 ```swift
-.failure(NetworkError.transportError(error)) // fetchProfile 메서드 내 5번 라인
+.failure(NetworkError.transportError(error)) // error 발생시
                     or
-.failure(NetworkError.responseError(statusCode: httpResponse.statusCode)) // fetchProfile 메서드 내 9번 라인
+.failure(NetworkError.responseError(statusCode: httpResponse.statusCode)) // statusCode의 범위가 200이상 300미만이 아닐때
                     or
-.failure(NetworkError.noData) // fetchProfile 메서드 내 14번 라인
+.failure(NetworkError.noData) // 데이터가 없을때
                     or
-.success(profile)    // fetchProfile 메서드 내 22번 라인
+.success(profile)    // GithubProfile 형태로 decode가 잘되었을 때
                     or
-.failure(NetworkError.decodingError(error)) // fetchProfile 메서드 내 24번 라인
+.failure(NetworkError.decodingError(error)) // GithubProfile 형태로 decode에 실패 했을때
 ```
 - 결과값을 fetchProfile 메서드의 escaping closure인 completion: (Result<GithubProfile, Error>) -> Void 클로져의 Result<GithubProfile,Error> 자리에 보내면 fetchProfile을 호출하는 곳의 클로져에서 result로 받을것이다.
