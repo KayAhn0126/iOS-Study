@@ -31,5 +31,5 @@ struct BankAccount {
 
 var someAccount = BankAccount()
 someAccount.currentMoney = 0
-print(someAccount.$currentMoney)
-print(someAccount.currentMoney)
+print(someAccount.$currentMoney) // true
+print(someAccount.currentMoney) // 1000
