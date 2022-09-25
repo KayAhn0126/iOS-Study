@@ -10,11 +10,6 @@
 ```
 - Combine에서 일반 프로퍼티를 퍼블리셔로 만들어 주는 @Published의 정의를 보자
 ![](https://i.imgur.com/aTV0MUb.png)
-
-<!-- 
-## 🍎 Property Wrapper를 사용할 수 있는 환경
-- local stored variable에서만 사용 가능
- -->
  
 ## 🍎 직접 Property Wrapper를 만들어 사용 해보자
 - class, struct, enum를 통해 Property Wrapper를 만들수 있다.
@@ -39,7 +34,7 @@ struct ThousandOrMore {
 ### 은행 계좌 인스턴스를 생성할 BankAccount 구조체 생성
 ```swift
 struct BankAccount {
-    @ThousandOrMore var currentMoney: Int
+    @ThousandOrMore var currentMoney: Int // - local stored variable에서만 사용 가능
 }
 ```
 
