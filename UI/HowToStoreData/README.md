@@ -1,4 +1,4 @@
-# 저장소를 사용해 값 주고 받기
+# 저장소를 사용해 값 저장 및 호출
 
 ## 🍎 생명주기로 알아보는 저장소들
 - AppDelegate 클래스 -> 앱이 종료되면 저장 정보도 휘발
@@ -8,9 +8,6 @@
 - Core Data 객체 -> 앱이 삭제될 때 까지 저장 가능
     - 보통 소규모 데이터베이스 처럼 다소 복잡한 형태의 데이터를 저장하는데 사용
     - 코코아 터치 프레임워크에서 제공
-
-
-
 
 ## 🍎 AppDelegate 객체를 사용해 값 주고 받기
 
@@ -92,13 +89,14 @@ class MainViewController: UIViewController {
     - 따라서 하나의 앱에 @UIApplicationMain 어노테이션은 한번만 사용 해야함.
 
 
-## 🍎 UserDefaults 객체를 사용해 값 주고 받기
+## 🍎 UserDefaults 객체를 사용해 값 저장하기
 - 내부적으로 plist 파일을 이용해 값을 저장하는 UserDefaults 객체
     - 본래 NSData, NSString, NSNumber, NSDate, NSArray, NSDictionary 타입의 값만 저장할 수 있었다.
     - 즉, 다른 클래스 타입의 객체를 저장하려면 직렬화 과정을 거쳐야 했다.
     - 하지만 스위프트 언어가 코코아 터치 프레임워크에 반영되면서 스위프트에서 제공하는 기본 자료형까지 UserDefaults 객체에서 그대로 저장할 수 있게 됨.
 
 - UserDefaults에 저장하는 코드
+    - 일반, 객체, 배열의 저장 방식을 알아보자
 ```swift
 import UIKit
 class UpdatePurposeViewController: UIViewController {
@@ -109,10 +107,16 @@ class UpdatePurposeViewController: UIViewController {
         // UserDefault 객체의 인스턴스 가져오기
         let ud = UserDefaults.standard
         
-        // 값 저장하기
+        // 일반 타입의 값 저장하기
         ud.set(self.email.text, forKey: "email")
         ud.set(self.address.text, forKey: "address")
         ud.set(self.age, forKey: "age")
+        
+        // 객체 저장하기
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(객체), forKey:"객체")
+
+        // 배열 저장하기
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(배열), forKey:"배열")
         
         // 이전 화면으로 돌아가기
         self.presentingViewController?.dismiss(animated: true)
@@ -121,12 +125,13 @@ class UpdatePurposeViewController: UIViewController {
 ```
 - UserDefaults는 시스템에서 자동으로 생성하여 제공하는 단일 객체.
 - UserDefaults.standard는 클래스 프로퍼티이므로 인스턴스를 생성하지 않고 사용.
+
 ### 위의 코드 설명
 - UserDefaults.standard 프로퍼티를 통해 얻어온 UserDefaults 객체의 인스턴스를 ud 상수에 저장.
     - set(_: forKey:) 메서드를 사용해 값을 저장.
     - UserDefaults에 저장한 객체는 함께 저장된 키를 통해 구분된다.
 
-### UserDefaults에 저장된 값을 꺼내는 코드
+## 🍎 UserDefaults에 저장된 값을 사용하기
 ```swift
 import UIKit
 class MainViewController: UIViewController {
@@ -134,28 +139,40 @@ class MainViewController: UIViewController {
         // UserDefault 객체의 인스턴스 가져오기
         let ud = UserDefaults.standard
         
+        // 일반적인 타입의 값 추출하기
         if let email = ud.string(forKey: "email") {
             resultEmail.text = email
+        }
+        
+        // 객체의 값 추출하기
+        if let data = UserDefaults.standard.value(forKey:"genre") as? Data {
+            let genre = try? PropertyListDecoder().decode(Genre.self, from: data)
+        }
+
+        // 배열 추출하기
+        if let data = UserDefaults.standard.value(forKey:"genres") as? Data {
+            let genres = try? PropertyListDecoder().decode([Genre].self, from: data)
         }
     }
 }
 ```
 
-### UserDefaults에 대해 알아둘 점.
-- UserDefaults 객체는 인메모리 캐싱(In - memory Caching) 메커니즘을 사용한다.
-- 인메모리 캐싱 정의
-    - 실제 저장된 위치에서 데이터를 매번 새로 읽어 들이는 것이 아닌 한번 읽은 데이터를 메모리에 저장해 두고 재사용하는 것
-- 인메모리 캐싱 장단점
-    - 장점: 한번 읽은 데이터를 메모리에 저장해 두고 재사용해 성능 향상
-    - 단점: 기본 저장소와 메모리에 있는 데이터가 일치하지 않을 가능성 있음.
-- 데이터 통일을 위해 UserDefaults에 데이터를 저장한 후, 캐싱된 데이터를 갱신하여 양쪽 데이터를 일치시켜 주어야 한다.
-- 이를 동기화 처리 또는 싱크 처리라고 한다.
-- synchronize()메서드 사용.
+## 🍎 computed property와 UserDefaults를 같이 사용하기
+- Computed Property를 활용하여 UserDefaults에 데이터를 더 쉽에 읽고 쓸 수 있다.
+- get에서는 UserDefaults에 저장되어있는 데이터를 가져와 디코딩한후 반환하고 데이터가 없거나 디코딩이 실패하면 **예제**처럼 빈배열을 반환하거나 입맛에 맞게 nil을 반환하면 된다.
+- set에서는 newValue를 인코딩하여 UserDefaults에 저장합니다.
 ```swift
-let ud = UserDefaults.standard
-
-ud.set("Kay", forKey: "name")
-ud.set(30, forKey: "age") // forKey의 타입은 항상 String.
-ud.synchronize() // 싱크처리
+static var movieGenres: [Genre] {
+    get {
+        var genres: [Genre]?
+        if let data = UserDefaults.standard.value(forKey:"genres") as? Data {
+            genres = try? PropertyListDecoder().decode([Genre].self, from: data)
+        }
+        return genres ?? []
+    }
+    set {
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey:"genres")
+    }
+}
 ```
-
+- computed property 내용은 이 [블로그](https://kyungmosung.github.io/2020/08/17/swift-userdefaults-customobject/)를 참고.
