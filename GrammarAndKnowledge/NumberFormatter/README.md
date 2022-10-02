@@ -94,7 +94,21 @@ public enum Style : UInt, @unchecked Sendable {
 }
 ```
 
-## 🍎 RoundingMode enum 구성
+## 🍎 maximumFractionDigits 프로퍼티
+- [공식문서](https://developer.apple.com/documentation/foundation/nsnumberformatter/1415364-maximumfractiondigits)
+- The maximum number of digits after the decimal separator 라고 설명.
+- 공식 문서의 예제
+```swift
+var numberFormatter = NumberFormatter()
+
+numberFormatter.maximumFractionDigits = 0 // default
+numberFormatter.string(from: 123.456) // 123
+
+numberFormatter.maximumFractionDigits = 3
+numberFormatter.string(from: 123.456789) // 123.457
+```
+
+## 🍎 roundingMode enum 구성
 ```swift
 public enum RoundingMode : UInt, @unchecked Sendable {
     case ceiling = 0
