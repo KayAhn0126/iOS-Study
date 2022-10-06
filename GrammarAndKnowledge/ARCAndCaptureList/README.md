@@ -1,6 +1,5 @@
 # ARC와 캡쳐리스트
-
-[애플 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html) 기반 공부 후 정리
+[애플 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html) 기반 공부 후 정리 & Credit to [Mark Moeykens](https://www.youtube.com/watch?v=1LnipXiSrSM&list=RDCMUChH6WbyYeX0INJjrK2-6WSg&index=4)
 
 ## 🍎 ARC
 - ARC는 Swift의 메모리 관리 방법
@@ -86,6 +85,9 @@ unit4A = nil
 
 
 ## 🍎 약한 참조 / 미소유 참조를 이용한 강한 순환 참조 문제 해결
+![](https://i.imgur.com/8Y5WRCT.jpg)
+
+- **weak / unowned reference는 reference count를 늘리지 않는다.**
 - weak reference 언제 사용하나?
     - 다른 인스턴스의 라이프타임이 더 짧을 때 사용.
 - unowned reference 언제 사용하나?
@@ -169,18 +171,86 @@ class CreditCard {
 
 ## 🍎 잠깐 정리!
 - Person과 Apartment 코드에서 왜 Apartment의 tenant 프로퍼티가 weak var로 선언되었지?
+    - **강한 참조 순환을 피하려고!**
+    - **부모, 자식 클래스를 정하고 자식에게 weak 키워드를 씌운 형태**
+    - **아래 사진에도 나와있는 것 처럼, 자식은 있을 수도, 없을수도 있지만, 있다면 부모가 사라질때 사라진다.**
     - 극단적인 예로 Person 인스턴스는 아파트를 가지고 있을 수 있지만 꼭 그 아파트에 살 필요는 없다.
     - 즉, tenant가 nil이 될 확률이 더 높다는 이야기.
     - apartment와 tenant 둘중 어떤것에도 weak를 붙여도 코드는 문제없이 돌아가지만 설정상 라이프 사이클이 짧은것에 붙임.
 - Customer과 CreditCard 코드에서 왜 CreditCard class의 customer 클래스가 unowned일까?
+    - **강한 참조 순환을 피하려고!**
+    - **마찬가지로 부모, 자식 클래스를 정하고 자식에게 unowned 키워드를 씌운 형태**
+    - **자식은 항상 존재하지만 부모가 사라질때 같이 사라진다.**
     - unowned 키워드는 인스턴스의 라이프 사이클이 같거나 더 긴쪽에 붙인다.
     - 고객은 신용카드를 가지고 있을수도 있고 아닐수도 있지만, 신용카드는 항상 주인(고객)이 필요하다.
     - 즉 Customer의 라이프 사이클이 더 길기 때문에 customer 프로퍼티에 붙여 강한 참조 순환 문제 해결.
 
 
+## 🍎 Orphan memory leak (접근이 불가해 생기는 메모리 릭)
 
-## 🍎 클로져에서 값을 캡쳐하기
+- 먼저 Orphan memory leak을 설명하기 위한 코드를 보자. (Mark Moeykens가 제공)
+![](https://i.imgur.com/P1vxvrz.jpg)
+---
+
+![](https://i.imgur.com/hwaHQPc.jpg)
+- 클로져는 자신만의 메모리 공간이 있다!
+- 즉, onSave의 클로져는 자신만의 메모리 공간이 있다.
+- 여기서 메모리 공간을 갖는것들은 popup, onSave, 그리고 self(ViewController)이다.
+---
+
+![](https://i.imgur.com/faLKvCo.jpg)
+- 해당 self는 ViewController를 가르킨다.
+- 위 코드의 popup, onSave, self가 어떻게 참조되는지 보자.
+---
+
+![](https://i.imgur.com/lhhOI5e.jpg)
+- DatePopupViewController(popup)이 onSave 클로져를 강한 참조하고있고,
+- onSave 클로져(DatePopupViewController의 프로퍼티)는 self(ViewController)를 강하게 참조하고 있다.
+- 그림으로 보자!
+---
+![](https://i.imgur.com/dxeiaSb.jpg)
+- 이 경우 DatePopupViewController 객체가 사라지면 Orphan memory leak 상태가 된다. -> onSave closure와 ViewController 인스턴스에 접근 불가 상태.
+
+## 🍎 Retain cycle memory leak (강한 참조 순환으로 생기는 메모리 릭)
+- 먼저 Retain cycle memory leak을 설명하기 위한 코드를 보자. (Mark Moeykens 제공)
+
+![](https://i.imgur.com/1PubuW4.jpg)
+- 이전과 다른점은 강한 참조 순환을 만들기 위한 프로퍼티 추가.
+```swift
+popup: DatePopupViewController!
+```
+
+---
+
+![](https://i.imgur.com/jdMmPqR.jpg)
+- popup 프로퍼티는 onSave 클로져에 대해 강한 참조를 하고있다.
+---
+
+![](https://i.imgur.com/1J8FmAe.jpg)
+- onSave 클로져는 self에 대해 강한 참조를 하고있다.
+
+---
+
+![](https://i.imgur.com/IjEVVaX.jpg)
+- ViewController는 popup 프로퍼티에 강한 참조를 하고있다.
+
+---
+
+- 현재 코드의 상황을 표를 통해 알아보자
+![](https://i.imgur.com/w9tRG96.png)
+- 모두 Reference Count가 1이라 어느것도 해제 할 수 없는 상황.
+
+
+## 🍎 캡쳐리스트는 왜 필요할까?
+
+![](https://i.imgur.com/BbD7ENJ.jpg)
+- 강한 참조 순환의 발생을 막기위해 클로져 내 참조하는 곳에서 약한/미소유 참조를 명시하기 위해 사용한다.
+---
+
+![](https://i.imgur.com/iaTmMgV.jpg)
+- unowned reference를 추가해서 강한 참조 순환을 해결.
+
 
 ## 🍎 Citation
 [애플 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
-
+[Mark Moeykens](https://www.youtube.com/watch?v=1LnipXiSrSM&list=RDCMUChH6WbyYeX0INJjrK2-6WSg&index=4)
