@@ -1,7 +1,10 @@
 # 저장소를 사용해 값 저장 및 호출
 
+## 🍎 시작하기전 알아둘것
+- 아래 내용에서는 AppDelegate 객체, UserDefaults 객체라고 표현하는데 사실 이는 각각 AppDelegate 클래스의 객체, UserDefaults 클래스의 객체라고 표현 하는것이 맞다. 하지만 AppDelegate, UserDefaults 두 클래스 모두 고유의 인스턴스는 하나씩 가지고 있기 때문에 아래에서는 '클래스 + 객체'로 사용했다.
+
 ## 🍎 생명주기로 알아보는 저장소들
-- AppDelegate 클래스 -> 앱이 종료되면 저장 정보도 휘발
+- AppDelegate 객체 -> 앱이 종료되면 저장 정보도 휘발
 - UserDefaults 객체 -> 앱이 삭제될 때 까지 저장 가능
     - 보통 간단한 데이터를 저장하는 용도로 사용.
     - 코코아 터치 프레임워크에서 제공
@@ -31,7 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var age: Int?
 }
 ```
-
+- 즉, AppDelegate 클래스를 통해 객체를 만들면 email, address, age를 프로퍼티로 갖는다.
+- 하지만, AppDelegate 클래스의 인스턴스는 우리가 일반적으로 객체를 생성하는 것 처럼 직접 생성할 수 없다.
 
 ```swift
 // 저장하려는 ViewController에서..
@@ -41,13 +45,13 @@ class UpdatePurposeViewController: UIViewController {
     // ... (중략) ...
     
     @IBAction func saveItToAppDelegate(_ sender: Any) {
-        // AppDelegate 객체의 인스턴스를 가져온다.
         let ad = UIApplication.shared.delegate as? AppDelegate
-        // AppDelegate의 인스턴스를 가져오는 코드
-        // AppDelegate는 앱 전체를 통틀어 하나의 인스턴스만 존재하도록 iOS 시스템에 의해 보장.
-        // 이런 특성으로 인해 AppDelegate 클래스의 인스턴스는 직접 생성할 수 없고,
-        // UIApplication.shared.delegate 구문을 통해 현재 생성되어 있는 인스턴스를 참조해야 한다.
-        // UIApplication.shared.delegate 구문으로 읽어온 앱 델리게이트 객체는 UIApplicationDelegate타입이므로, 우리가 추가한 프로퍼티를 사용하려면 AppDelegate 클래스 타입으로 다운캐스팅 해야한다.
+        // 코드처럼 UIApplication.shared.delegate(UIApplicationDelegate? 타입)을 AppDelegate 타입으로 다운캐스팅해서 사용 해야한다.
+        // UIApplication 클래스 -> 앱의 제어권을 가지고 있는 가장 중심이 되는 클래스
+        // UIApplication.shared -> 클래스의 타입 프로퍼티 접근
+        // UIApplication.shared.delegate -> 여기서 .delegate는 UIApplication의 위임 객체.
+        // UIApplication.shared.delegate는 UIApplicationDelegate? 타입이다.
+
         
         // 값 저장
         ad?.email = self.email.text
@@ -59,6 +63,10 @@ class UpdatePurposeViewController: UIViewController {
     }
 }
 ```
+
+- UIApplication.shared.delegate에서 delegate가 어디서 나왔고 무슨 역할인지 정의부에 가서 확인 해보았다.
+- "Every app must have an app delegate object to respond to app-related messages."
+- 모든 앱에는 앱 관련 메세지에 응답하기 위해 위임 객체가 있어야 한다
 
 ```swift
 // AppDelegate 객체의 값을 원하는 ViewController의 프로퍼티에 넣는 코드
