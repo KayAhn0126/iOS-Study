@@ -188,7 +188,7 @@ class CreditCard {
 
 ## 🍎 Orphan memory leak (접근이 불가해 생기는 메모리 릭)
 
-- 먼저 Orphan memory leak을 설명하기 위한 코드를 보자. (Mark Moeykens가 제공)
+- 먼저 Orphan memory leak을 설명하기 위한 코드를 보자. (Mark Moeykens 제공)
 ![](https://i.imgur.com/P1vxvrz.jpg)
 ---
 
