@@ -29,6 +29,7 @@
 | [@Sendable](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/SendableKeyword)| [Error 열거형 선언 / 데이터 수신 여부에 따른 프로세스(escaping)](https://github.com/KayAhn0126/Network/blob/main/Network%20in%20iOS.playground/Pages/Fetch%20Method.xcplaygroundpage/Contents.swift)에서 URLSession내 dataTask 메서드 분석 중 발견한 @Sendable 키워드 정리|
 | | |
 | | |
+
 # Design Pattern
 | 제목 | 설명|
 |:-:|:-:|
@@ -42,8 +43,7 @@
 | | |
 | | |
 
-# Clone Projects
-
+# Clone Projects & Research
 | 프로젝트 | 설명 |
 |:-:|:-:|
 | [Simple Weather](https://github.com/KayAhn0126/SimpleWeather)| 이미지뷰와 레이블, 스택뷰를 사용한 랜덤 날씨 제조 앱 |
@@ -61,6 +61,6 @@
 | [GithubUserProfile](https://github.com/KayAhn0126/GithubUserProfile)| Navigation Controller, UISearchController, Combine, Kingfisher, Xcode Package Manager를 사용한 Github 사용자 프로필 검색|
 | [GithubUserSearch](https://github.com/KayAhn0126/GithubUserSearch)| UICollectionView, DiffableDataSource, Snapshot, Compositional Layout, Navigation Controller, UISearchController, Combine, Kingfisher, Xcode package Manager를 사용한 Github사용자 아이디 검색 및 프로필 제공|
 | [AppleFrameworkWithMVVM](https://github.com/KayAhn0126/AppleFrameworkWithMVVM) | [기존 프로젝트](https://github.com/KayAhn0126/AppleFrameworkWithModalAndCombine)내 'Model 데이터를 받아 처리하는 로직'을 ViewModel로 이전, View Controller의 역할 분담 및 추후 유지/보수 목적으로 MVVM 패턴 적용|
-| | |
+| [GithubUserProfileWithMVVM](https://github.com/KayAhn0126/GithubUserProfileWithMVVM)| Combine을 사용한 [기존 프로젝트](https://github.com/KayAhn0126/GithubUserProfile)에 유지/보수 목적으로 MVVM 패턴 적용|
 | | |
 
