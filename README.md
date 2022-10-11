@@ -33,7 +33,12 @@
 # Design Pattern
 | 제목 | 설명|
 |:-:|:-:|
-| [MVVM](https://github.com/KayAhn0126/Design-Pattern/tree/main/MVVM)| MVVM 공부 및 정리|
+| [MVVM](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/MVVM)| MVVM 공부 및 정리|
+
+# SwiftUI
+| 제목 | 설명 |
+|:-:|:-:|
+| [SwiftUI](https://github.com/KayAhn0126/SwiftUI)| SwiftUI 정리| 
 
 # Combine & Network
 | 제목 | 설명|
