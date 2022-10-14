@@ -68,5 +68,5 @@
 | [GithubUserSearch](https://github.com/KayAhn0126/GithubUserSearch)| UICollectionView, DiffableDataSource, Snapshot, Compositional Layout, Navigation Controller, UISearchController, Combine, Kingfisher, Xcode package Manager를 사용한 Github사용자 아이디 검색 및 프로필 제공|
 | [AppleFrameworkWithMVVM](https://github.com/KayAhn0126/AppleFrameworkWithMVVM) | [기존 프로젝트](https://github.com/KayAhn0126/AppleFrameworkWithModalAndCombine)내 'Model 데이터를 받아 처리하는 로직'을 ViewModel로 이전, View Controller의 역할 분담 및 추후 유지/보수 목적으로 MVVM 패턴 적용|
 | [GithubUserProfileWithMVVM](https://github.com/KayAhn0126/GithubUserProfileWithMVVM)| Combine을 사용한 [기존 프로젝트](https://github.com/KayAhn0126/GithubUserProfile)에 유지/보수 목적으로 MVVM 패턴 적용|
-| | |
+| [GithubUserSearchWithMVVM](https://github.com/KayAhn0126/GithubUserSearchWithMVVM)| [기존 프로젝트](https://github.com/KayAhn0126/GithubUserSearch)에 유지/보수 목적으로 MVVM 패턴 적용|
 
