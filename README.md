@@ -11,8 +11,8 @@
 | [Delegate Pattern](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/DelegatePattern) | PartyDirector가 PartyWorker에게 일을 위임하는 코드 구현 | delegate 패턴이 자주 사용되어 테스트 및 정리 |
 | [Delegate Pattern With Role Play](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/DelegatePatternWithRolePlay)| 보스가 비서에게 해야할 일을 위임하는 코드 구현| Delegate Pattern 연습|
 | [Modern Collection View](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/ModernCollectionView)| 복잡한 뷰 및 데이터 일관성을 위한 Compositional Layout 공부| 기존 FlowLayout과 다른점 정리 |
-| | | |
-| | | |
+| [ClipsToBounds와 MasksToBounds](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/ClipsToBounds-MasksToBounds)| 두 프로퍼티가 어떻게 사용되는지 공부| 자주 사용되지만 정확한 개념 확립을 위해 공부|
+| [UIView와 CALayer](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/CALayer)| layer 사용 중 개념 정리 | 자주 사용되지만 정확한 개념 확립을 위해 공부|
 
 # Grammar & knowledge
 | 제목 | 설명|
