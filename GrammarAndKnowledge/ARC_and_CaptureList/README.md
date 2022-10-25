@@ -252,5 +252,5 @@ popup: DatePopupViewController!
 
 
 ## 🍎 Citation
-[애플 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
-[Mark Moeykens](https://www.youtube.com/watch?v=1LnipXiSrSM&list=RDCMUChH6WbyYeX0INJjrK2-6WSg&index=4)
+- [애플 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
+- [Mark Moeykens](https://www.youtube.com/watch?v=1LnipXiSrSM&list=RDCMUChH6WbyYeX0INJjrK2-6WSg&index=4)
