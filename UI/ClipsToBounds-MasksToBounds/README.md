@@ -21,5 +21,4 @@ superView.layer.masksToBounds = true
 ![](https://i.imgur.com/P0RVRKO.png)
 
 ## 🍎 Citation
-[공부 출처](https://babbab2.tistory.com/47)
-
+- [개발자 소들이](https://babbab2.tistory.com/47)

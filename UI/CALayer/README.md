@@ -55,6 +55,6 @@
     - MacOS로 이식 가능성.
 
 ## 🍎 Citation
-[CALayer 공식 문서](https://developer.apple.com/documentation/quartzcore/calayer)
-[개발자 소들이](https://babbab2.tistory.com/53)
-[송태환](https://velog.io/@songtaehwan/iOS-Views-vs-Layers)
+- [CALayer 공식 문서](https://developer.apple.com/documentation/quartzcore/calayer)
+- [개발자 소들이](https://babbab2.tistory.com/53)
+- [송태환](https://velog.io/@songtaehwan/iOS-Views-vs-Layers)
