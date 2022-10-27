@@ -1,5 +1,6 @@
 # iOS-Study
 
+# UI
 |이름|설명|이유|
 |:-:|:-:|:-:|
 | [스토리보드 없이 프로젝트 시작하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/HowToRemoveStoryboard) | 스토리보드 삭제 방법| 코드로 UI를 구성시 불필요한 스토리보드 삭제 방법 메모 |
