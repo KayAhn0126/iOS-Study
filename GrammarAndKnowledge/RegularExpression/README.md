@@ -134,6 +134,9 @@ let regex = try? NSRegularExpression(pattern: pattern)
         - try? -> do-catch 필요 x / 에러가 발생하지 않으면 옵셔널, 발생하면 nil
         - try! -> do-catch 필요 x / 에러가 발생하지 않으면 일반값, 발생하면 crash
 
+## 🍎 차이점
+- [A-Z]{2}+@[a-z]{3}+\\.[0-9]{4} 대문자 2개 + @ + 소문자 3개 + . + 숫자 4개 순서를 지키면 통과!
+- (?=.*[A-Z].*[A-Z])(?=.*[@])(?=.*[a-z].*[a-z].*[a-z])(?=.*[.])(?=.*[0-9].*[0-9].*[0-9].*[0-9]) 대문자 2개 + @ + 소문자 3개 + . + 숫자 4개 순서와 상관없이 모두 들어있으면 통과!
 
 ## 🍎 Citation
 - [Easy REGEX in Swift](https://www.youtube.com/watch?v=_3-uWtTO_Sc)
