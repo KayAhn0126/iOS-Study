@@ -11,11 +11,17 @@
 - **아직 NSPredicate와 NSRegularExpression을 각각 언제 사용해야하는지 확실하지 않음**
 
 ## 🍎 정규식 문법 알아보기
+- [A-Z] : 대문자
+- [a-z] : 소문자
+- [0-9] : 숫자
+- [A-Za-z] : 대문자+소문자
+- [A-Za-z0-9] : 대문자+소문자 + 숫자
+- [~!@#%^&*] : 특수문자
+- (?=.*[조건]) : 조건이 최소 하나 이상
+- (?=.*[조건].*[조건]) : 조건이 최소 두개 이상
 - ^ : 시작.
 - $ : 종료.
-- (?=.* 로 시작: 조건문
 - {0,} : 0개 이상.
-- [] : 괄호안에 있는 문자 중 임의의 한 문자.
     - 예제 1
     ```swift
     let pattern = "^[A-Za-z0-9]{0,}$"
@@ -26,8 +32,8 @@
     let pattern = (?=.*[A-Z].*[A-Z]) // 대문자가 2자 이상 있어야 한다.
     let pattern = (?=.*[a-z].*[a-z].*[a-z]) // 소문자가 3자 이상 있어야 한다.
     ```
-## 🍎 바로 예제를 통해 알아보자
-### 📖 예제 1
+## 🍎 바로 예제를 통해 알아보자 (천천히 읽어보기)
+### 📖 예제 1 (NSRegularExpression)
 ```swift
 private func emailValidateThroughNSRegularExpression(_ email: String) -> Bool {
     let emailPattern = #"^[A-Z0-9a-z._%-+]+@[A-Z0-9a-z.-]+\.[A-Za-z]{2,4}$"#
@@ -55,17 +61,16 @@ private func emailValidateThroughNSRegularExpression(_ email: String) -> Bool {
 //                     전체 정규식을 '#'으로 감싸면 화살표 부분을 아래와 같이 사용할 수 있다.
 // #"^[A-Z0-9a-z._%+-]+@[A-Z0-9a-z.-]+\.[A-Za-z]{2,4}$"# <-- '#'으로 감싼 정규식
 ```
-### 📖 예제 2
+### 📖 예제 2 (NSPredicate)
 ```swift
 private func emailValidateThroughNSPredicate(_ email: String) -> Bool {
     let pattern = #"^[A-Z0-9a-z._%+-]+@[A-Z0-9a-z.-]+\.[A-Za-z]{2,4}$"#
     return NSPredicate(format: "SELF MATCHES %@", pattern).evaluate(with: email)
 ```
-- **위에 NSRegularExpression을 통해 이메일 형태가 맞는지 체크하는 정규식은 같다.**
-- 하지만 예제2 메서드는 NSPredicate로 구현한 코드이다. -> **어떻게 쓰는지 구현 방식을 보자**.
+- NSPredicate를 사용해 문자열이 이메일 형태인지 확인하는 메서드.
 
-### 📖 예제 3
-- **대문자, 소문자, 특수문자, 숫자 각각 1개씩 꼭 들어가고 8자 이상인 문자열** -> true
+### 📖 예제 3 (NSPredicate)
+- **대문자, 소문자, 특수문자, 숫자 각각 1개씩 꼭 들어가고 총 8자 이상인 문자열** -> true
 ```swift
 func validateThroughNSPredicate2() -> Bool {
     let regularExpression = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@$!*%?&]).{8,}"
@@ -75,9 +80,9 @@ func validateThroughNSPredicate2() -> Bool {
 ```
 - 상수 regularExpression 분석
     - (?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@$!*%?&]) -> 대문자 1개, 소문자 1개, 숫자 1개, 특수문자 1개 를 충족해야 한다.
-    - .{8,} -> 길이는 최소 8이상이 되야한다.
+    - .{8,} -> 문자열의 총 길이는 최소 8 이상 되어야 한다.
 
-### 📖 예제 4
+### 📖 예제 4 (NSPredicate)
 - 대문자가 2개, 소문자가 3개, + . + 숫자가 4개 있어야 true가 되는 메서드
 ```swift
 func customCheck() -> Bool {
@@ -86,6 +91,18 @@ func customCheck() -> Bool {
     return validation.evaluate(with: self)
 }
 ```
+
+## 🍎 예제 2번과 3번에서 최소 글자 및 최대 글자를 정할때 다른점
+- 예제 2번
+    ```swift
+    #"^[A-Z0-9a-z._%+-]+@[A-Z0-9a-z.-]+\.[A-Za-z]{2,4}$"#
+    ```
+    - \.[A-Za-z] -> . 뒤에오는 대,소문자만 2자 이상 4자 이하가 되어야 하는 조건.
+- 예제 3번
+    ```swift
+    "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@$!*%?&]).{8,}"
+    ```
+    - .{8,} -> 전체가 8자 이상이 되어야 하는 조건.
 - {숫자} -> 딱 숫자만큼 자리수를 지정할 수 있다.
 
 ## 🍎 NSRegularExpression 객체 만드는 과정에서 생긴 궁금증.
