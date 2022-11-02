@@ -38,3 +38,4 @@ print(Game.self.coin) // 타입 오브젝트를 통해 멤버에 접근하고 �
 ## 🍎 Citation
 - https://velog.io/@budlebee/Swift-5-%EB%A9%94%ED%83%80%ED%83%80%EC%9E%85-%ED%83%80%EC%9E%85Metatype-Type
 - https://woozzang.tistory.com/160
+- [정리하기](https://medium.com/swiftcraft/introduction-to-swift-metatypes-21949842d7a)
