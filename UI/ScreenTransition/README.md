@@ -80,3 +80,29 @@ secondViewController.modalTransitionStyle = .coverVertical
 secondViewController.modalPresentationStyle = .fullScreen
 self.present(secondViewController, animated: true, completion: nil)
 ```
+
+## 🍎 네비게이션 바 백버튼 커스텀
+- 네이게이션 컨트롤러를 사용하면 '< Back' <- 자동으로 이렇게 생긴 이전화면으로 돌아가는 파란색의 back 버튼을 제공한다.
+- '< Back' 에서 "Back"라는 글자를 지우고 '<'만 남기고, 색상은 그레이로 바꾸고 싶었다.
+- bar button item을 커스터마이징해서 navigation item의 backBarButtonItem 자리에 넣어주면 된다.
+```swift
+let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+backBarButtonItem.tintColor = .gray
+self.navigationItem.backBarButtonItem = backBarButtonItem
+navigationController?.pushViewController(signUpViewController, animated: true)
+```
+- 이렇게 만들어 줬더니 런타임에는 잘보이지만 스토리보드에서는 보이지 않아 버튼이 눌렸을때 기존 화면으로 돌아가는 기능을 어떻게 제공해 줘야 하는지 찾아보았다.
+- 아래와 같이 UIBarButtonItem을 생성할 때, action argument에 버튼이 눌렸을때 실행될 메서드를 집어넣으면 된다.
+```swift
+let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(backToOriginal(_:)))
+backBarButtonItem.tintColor = .gray
+self.navigationItem.backBarButtonItem = backBarButtonItem
+navigationController?.pushViewController(signUpViewController, animated: true)
+
+@objc func backToOriginal(_ sender: UIBarButtonItem) {
+    self.navigationController?.popViewController(animated: true)
+}
+```
+
+
+
