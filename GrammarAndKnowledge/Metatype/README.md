@@ -1,5 +1,4 @@
 # Metatype
-- Self vs self 학습 후 보기.
 ```swift
 struct Game {
     static let coin = 100
@@ -7,7 +6,7 @@ struct Game {
 
 let gameInstance: Game = Game.init() // Game이라는 타입으로 찍어낸 인스턴스
 
-let gameType: Game.Type = Game.self // Game이라는 타입을 타입으로하는 상수. 클래스를 담고있다고 생각하자! -> 클래스 자체만 받는 통에 클래스 자체를 넣는다고 생각하기.
+let gameType: Game.Type = Game.self // Game이라는 타입을 타입으로하는 상수. -> 클래스 자체만 받는 통에 클래스 자체를 넣는다고 생각하기.
 
 print(gameType) // Game
 // someClass.self는 someClass의 인스턴스를 리턴하는게 아니라, someClass라는 것 자체를 리턴한다.
@@ -34,6 +33,15 @@ let gameType: Game.Type = Game.self
 print(Game.coin) // 컴파일러가 타입 네임을 통해 멤버에 접근하도록 허용
 print(Game.self.coin) // 타입 오브젝트를 통해 멤버에 접근하고 있음.
 ```
+## 🍎 metatype 사용법
+- 메타타입도 타입이므로 아래와 같이 함수를 만들수 있다.
+```swift
+func doSomething(with type: String.Type) {
+    //...
+}
+```
+- 위와 같은 경우에는 컴파일 시점에 어떤 메타타입 인스턴스가 사용될지 알지만, 프로그램이 실행되는 runtime에 얻어지는 오브젝트의 메타타입을 알려면 type(of:) 메서드를 사용하면 된다.
+
 
 ## 🍎 Citation
 - https://velog.io/@budlebee/Swift-5-%EB%A9%94%ED%83%80%ED%83%80%EC%9E%85-%ED%83%80%EC%9E%85Metatype-Type
