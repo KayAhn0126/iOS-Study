@@ -16,8 +16,8 @@
 | [ClipsToBounds와 MasksToBounds](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/ClipsToBounds-MasksToBounds)| 두 프로퍼티가 어떻게 사용되는지 공부| 자주 사용되지만 정확한 개념 확립을 위해 공부|
 | [UIView와 CALayer](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/CALayer)| layer 사용 중 개념 정리 | 자주 사용되지만 정확한 개념 확립을 위해 공부|
 | [Assets에 Custom Color Set 추가하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/HowToAddCustomColorSet)| 프로젝트 중 자주 사용되는 색상을 추가해 사용하는 방법 정리| 많이 사용되는 컬러를 간단하게 접근해 작업을 쉽게 만듦|
-|[@IBInspectable & @IBDesignable](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/IBInspectable)| 프로젝트 중 여러 버튼의 속성을 수정 필요로 공부 | 스토리보드의 inspector에서 속성 접근 방법 정리|
-||||
+| [@IBInspectable & @IBDesignable](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/IBInspectable)| 프로젝트 중 여러 버튼의 속성을 수정하는 계기로 공부 | 스토리보드의 inspector에서 속성 추가 방법 정리|
+| [버튼이 클릭 되었을때 다른 이미지로 변경하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/WhenButtonIsSelected)| 프로젝트 중 버튼 클릭시 다른 이미지로 변경 정리 | 버튼의 State config 설정에 따른 변화 정리 |
 
 # Grammar & knowledge
 | 제목 | 설명|
@@ -77,3 +77,4 @@
 | [Toss Benefit Tab](https://github.com/KayAhn0126/TossBenefit)| Section별 다른 구조의 cell을 보여주는 토스 혜택 탭 |
 | [Catstagram](https://github.com/KayAhn0126/Catstagram) | | |
 
+![](https://i.imgur.com/JuyvyZ1.png)
