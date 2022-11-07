@@ -1,3 +1,5 @@
+###### tags: `AppPractice`
+
 # Delegate Pattern
 
 ## 🍎 델리게이트 패턴 연습 코드
@@ -109,5 +111,5 @@ Kay.order()
 - delegate는 1:1이기 때문에 디렉터가 마지막으로 할당된 worker2의 메서드만 실행 되었다.
 
 ## 🍎 실험을 통해 배운점
-1. delegate / protocol은 1 : 1
-2. notification / observer 1 : many
+1. **delegate**는 1 : 1
+2. **notification**는 1 : many
