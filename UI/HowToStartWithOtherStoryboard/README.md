@@ -1,8 +1,8 @@
 # main이 아닌 스토리보드에서 시작하기
 
 ## 🍎 절차
-- 먼저 시작하고 싶은 스토리보드의 View Controller를 제외하고 모두 'is Initial View Controller'를 제거한다.
-- 아래와 같은 SceneDelegate내 메서드를 찾는다.
+- 시작하고 싶은 스토리보드의 View Controller를 제외하고 모든 **is Initial View Controller**를 제거한다.
+- SceneDelegate.swift내 아래 메서드를 찾는다.
 ```swift
 func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
