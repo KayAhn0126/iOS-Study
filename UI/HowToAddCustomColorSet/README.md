@@ -1,5 +1,4 @@
 # Assets에 Custom color set 
-- Catstagram 중..
 
 ## 🍎 절차
 - **프로젝트 -> Assets의 빈공간을 누르고 새로운 폴더 생성.**
@@ -19,3 +18,8 @@
 ---
 - **완성된 color set.**
 ![](https://i.imgur.com/aNPeiFx.png)
+---
+- 사용법
+```swift
+let signInTextColor = UIColor(named: "facebookColor")!
+```
