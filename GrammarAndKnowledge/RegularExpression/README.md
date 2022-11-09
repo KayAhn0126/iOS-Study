@@ -18,7 +18,7 @@
 - [A-Za-z0-9] : 대문자+소문자 + 숫자
 - [~!@#%^&*] : 특수문자
 - (?=.*[조건]) : 조건이 최소 하나 이상
-- (?=.*[조건].*[조건]) : 조건이 최소 두개 이상
+- (?=.\*[조건].\*[조건]) : 조건이 최소 두개 이상
 - ^ : 시작.
 - $ : 종료.
 - {0,} : 0개 이상.
@@ -141,3 +141,4 @@ let regex = try? NSRegularExpression(pattern: pattern)
 ## 🍎 Citation
 - [Easy REGEX in Swift](https://www.youtube.com/watch?v=_3-uWtTO_Sc)
 - [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression/1410900-init)
+- [김종권의 iOS](https://ios-development.tistory.com/591)
