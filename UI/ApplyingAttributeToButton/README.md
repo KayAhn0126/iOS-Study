@@ -1,12 +1,12 @@
 # Applying a new attribute to the UIButton
+
 ## 🍎 새로운 속성 적용 전,후 비교 이미지
 
 ### 📖 속성 적용 전
 ![](https://i.imgur.com/9nc7vlf.png)
 
 ### 📖 새로운 속성 적용 후 
-![](https://i.imgur.com/H5VcTfO.png)
-
+![](https://i.imgur.com/EakiEaS.png)
 
 ## 🍎 전체적인 흐름.
 - UIButton에는 setAttributedTitle이라는 메서드가 있다.
