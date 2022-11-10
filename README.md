@@ -19,6 +19,7 @@
 | [Assets에 Custom Color Set 추가하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/HowToAddCustomColorSet)| 프로젝트 중 자주 사용되는 색상을 추가해 사용하는 방법 정리| 많이 사용되는 컬러를 간단하게 접근해 작업을 쉽게 만듦|
 | [@IBInspectable & @IBDesignable](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/IBInspectable)| 프로젝트 중 여러 버튼의 속성을 수정하는 계기로 공부 | 스토리보드의 inspector에서 속성 추가 방법 정리|
 | [버튼이 클릭 되었을때 다른 이미지로 변경하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/WhenButtonIsSelected)| 프로젝트 중 버튼 클릭시 다른 이미지로 변경 정리 | 버튼의 State config 설정에 따른 변화 정리 |
+| [버튼에 새로운 속성 적용하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/ApplyingAttributeToButton)| 버튼 label에 새로운 속성 적용 방법 정리| 구간에 따라 사이즈, 폰트, 색상이 바뀌는 방법을 배움|
 
 # Grammar & knowledge
 | 제목 | 설명|
