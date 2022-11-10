@@ -1,12 +1,12 @@
 # Applying a new attribute to the UIButton
-
 ## 🍎 새로운 속성 적용 전,후 비교 이미지
 
 ### 📖 속성 적용 전
 ![](https://i.imgur.com/9nc7vlf.png)
 
 ### 📖 새로운 속성 적용 후 
-![](https://i.imgur.com/fSvIChV.png)
+![](https://i.imgur.com/H5VcTfO.png)
+
 
 ## 🍎 전체적인 흐름.
 - UIButton에는 setAttributedTitle이라는 메서드가 있다.
@@ -78,3 +78,5 @@ extension UIViewController {
 ```
 - 메서드의 매개변수는 다중 가변 매개변수(Multiple Variadic Parameters)를 적용해 하나의 파라미터로 여러개의 인자를 받고 메서드 내부에서는 배열로 사용할 수 있도록 했다.
 - 반환 타입이 NSMutableAttributedString이다.
+
+
