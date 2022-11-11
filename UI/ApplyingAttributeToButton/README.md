@@ -76,7 +76,38 @@ extension UIViewController {
     }
 }
 ```
-- 메서드의 매개변수는 다중 가변 매개변수(Multiple Variadic Parameters)를 적용해 하나의 파라미터로 여러개의 인자를 받고 메서드 내부에서는 배열로 사용할 수 있도록 했다.
-- 반환 타입이 NSMutableAttributedString이다.
+- generateButtonAttribute 메서드의 매개변수는 다중 가변 매개변수(Multiple Variadic Parameters)를 적용해 하나의 파라미터로 여러개의 인자를 받고 메서드 내부에서는 배열로 사용할 수 있도록 했다.
+- 메서드의 반환 타입이 NSMutableAttributedString이다.
+![](https://i.imgur.com/WfpnXAa.png)
+- NSMutableAttributedString은 NSAttributedString을 상속받은 클래스.
+    - NSAtrributedString은 텍스트의 스타일을 설정할 수 있는 텍스트 타입이다.
+    - NSMutableAttributedString은 NSAttributedString의 특정 구간(들)에 여러 스타일을 설정할 수 있는 텍스트 타입이다.
+- 즉, NSMutableAttributedString 객체를 아래와 같이 생성하고 구간마다 특정 스타일을 지정 후 반환한다.
+```swift
+// NSMutableAttributedString 객체 생성
+let attributedString = NSMutableAttributedString(string: wholeText)
+        
+// 생성한 객체에 스타일 설정을 추가한다.
+texts.indices.forEach { index in
+attributedString.addAttribute(.font,
+                              value: customFonts[index],
+                              range: customTextsRanges[index])
+attributedString.addAttribute(.foregroundColor,
+                              value: customColors[index],
+                              range: customTextsRanges[index])
+}
+return attributedString
+```
+- 호출한 메서드에서는 NSMutableAttributedString 객체를 받아서 버튼의 setAttributedTitle에 인자로 넣어준다. 
+```swift
+let attributes = generateButtonAttribute(self.signUpButton,
+                                         texts: askQuestionText, signUpText,
+
+                                         fonts: askQuestionTextFont, signUpTextFont,
+                                         colors: askQuestionTextColor, signUpTextColor)
+self.signUpButton.setAttributedTitle(attributes, for: .normal)
+```
+- setAttributedTitle(_ title: NSAttributedString?, for state: UIControl.State) 메서드는 NSAttributedString를 받는데 NSMutableAttributedString이 어떻게 가능할까?
+    - 위에도 써있지만NSMutableAttributedString은 NSAttributedString 상속 받았기 때문에 가능.
 
 
