@@ -7,13 +7,7 @@
 | [main이 아닌 스토리보드에서 앱 시작하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/HowToStartWithOtherStoryboard)| main이 아닌 다른 스토리보드에서 앱 시작하기 방법 정리| 특정 화면 구현시 앱 실행 후 바로 테스트 하기 위함|
 | [화면 전환 방법](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/ScreenTransition) | 직접 호출, 내비게이션 컨트롤러를 이용한 호출 | 화면 전환에 대해 직접 실험 및 정리 |
 | [화면간 데이터 전달 방법](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/DataTransferBetweenScreens)| 화면간 데이터 전달 방법 정리| 양방향으로 전달하는 방법 공부 |
-| [AppDelegate / UserDefaults](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/HowToStoreData)| AppDelegate와 UserDefaults를 사용한 데이터 저장 및 전달 방법 정리| 개인 프로젝트에 사용 예정|
 | [Alert 띄우기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/Alert)| HIG과 스타일에 대한 정리 | Notification Center 구현 중 공부 후 정리 |
-| [ScrollView & StackView](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/StackViewAndScrollView) | 스크롤뷰와 스택뷰를 스토리보드와 코드로 구현 | UI구현에서 가장 많이 사용되어 연습 |
-| [Delegate Pattern](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/DelegatePattern) | PartyDirector가 PartyWorker에게 일을 위임하는 코드 구현 | delegate 패턴이 자주 사용되어 테스트 및 정리 |
-| [Delegate Pattern With Role Play](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/DelegatePatternWithRolePlay)| 보스가 비서에게 해야할 일을 위임하는 코드 구현| Delegate Pattern 연습|
-| [Basic TableView & Collection View](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/TableViewAndCollectionView)| 기본 TableView 및 CollectionView 구조 정리 | CollectionView의 FlowLayout과 CompositionalLayout 비교|
-| [Modern Collection View](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/ModernCollectionView)| 복잡한 뷰 및 데이터 일관성을 위한 Compositional Layout 공부| 기존 FlowLayout과 다른점 정리 |
 | [ClipsToBounds & MasksToBounds](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/ClipsToBounds-MasksToBounds)| 두 프로퍼티가 어떻게 사용되는지 공부| 자주 사용되지만 정확한 개념 확립을 위해 공부|
 | [UIView와 CALayer](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/CALayer)| layer 사용 중 개념 정리 | 자주 사용되지만 정확한 개념 확립을 위해 공부|
 | [Assets에 Custom Color Set 추가하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/HowToAddCustomColorSet)| 프로젝트 중 자주 사용되는 색상을 추가해 사용하는 방법 정리| 많이 사용되는 컬러를 간단하게 접근해 작업을 쉽게 만듦|
@@ -24,6 +18,7 @@
 # Grammar & knowledge
 | 제목 | 설명|
 |:-:|:-:|
+| [AppDelegate / UserDefaults](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/HowToStoreData)| AppDelegate와 UserDefaults를 사용한 데이터 저장 및 전달 방법 정리|
 | [Associated Type](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/AssociatedType)| associatedtype 정리|
 | [Closure](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Closure)| 기본 클로저 정리|
 | [Notification Center](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/NotificationCenter)| Notification Center 정리|
@@ -33,6 +28,9 @@
 | [Number Formatter](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/NumberFormatter)| NumberFormatter 정리|
 | [Date Formatter](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/DateFormatter)| DateFormatter 정리|
 | [ARC / Capture List](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/ARC_and_CaptureList)| ARC와 Capture List 정리|
+| [ScrollView & StackView](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/StackViewAndScrollView) | 스크롤뷰와 스택뷰를 스토리보드와 코드로 구현 |
+| [Basic TableView & Collection View](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/TableViewAndCollectionView)| 기본 TableView 및 CollectionView 구조 정리와 CollectionView의 FlowLayout과 CompositionalLayout 비교|
+| [Modern Collection View](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/ModernCollectionView)| 복잡한 뷰 및 데이터 일관성을 위한 Compositional Layout 공부|
 | [@propertyWrapper](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/PropertyWrapper)| [기본 propertyWrapper 사용법 정리](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/PropertyWrapper/PropertyWrapper.playground/Pages/Basic%20PropertyWrapper.xcplaygroundpage/Contents.swift) <br> [wrapped된 property에 초기값 넣는 방법 정리](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/PropertyWrapper/PropertyWrapper.playground/Pages/PropertyWrapper%20%26%20Initializer.xcplaygroundpage/Contents.swift) <br> [projectedValue를 통해 새로운 값을 저장하기 전, 조정이 있었는지 확인하기](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/PropertyWrapper/PropertyWrapper.playground/Pages/ProjectedValue.xcplaygroundpage/Contents.swift)|
 | [@Sendable](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/SendableKeyword)| [Error 열거형 선언 / 데이터 수신 여부에 따른 프로세스(escaping)](https://github.com/KayAhn0126/Network/blob/main/Network%20in%20iOS.playground/Pages/Fetch%20Method.xcplaygroundpage/Contents.swift)에서 URLSession내 dataTask 메서드 분석 중 발견한 @Sendable 키워드 정리|
 | [Error Handling](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/ErrorHandling)| Error Handling 정리 & TBU|
@@ -42,6 +40,8 @@
 # Design Pattern
 | 제목 | 설명|
 |:-:|:-:|
+| [Delegate Pattern](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/DelegatePattern) | PartyDirector가 PartyWorker에게 일을 위임하는 패턴을 코드로 구현 | 
+| [Delegate Pattern With Role Play](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/DelegatePatternWithRolePlay)| 보스가 비서에게 해야할 일을 위임하는 코드 구현|
 | [MVVM](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/MVVM)| MVVM 공부 및 정리|
 
 # SwiftUI
