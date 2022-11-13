@@ -102,7 +102,7 @@ class BlueViewController: UIViewController {
 - 먼저 결합도를 낮추기 위해 프로토콜 생성
 ```swift
 protocol SendDataDelegate {
-    func recieveData(response : String) -> Void
+    func receiveData(response : String) -> Void
 }
 ```
 - GreeenVC는 SendDataDelegate를 채택, receiveData를 GreenVC내 정의.
@@ -124,7 +124,7 @@ class GreenViewController: UIViewController, SendDataDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    func recieveData(response: String) {
+    func receiveData(response: String) {
         print("response : \(response)")
     }
 }
@@ -144,7 +144,7 @@ class BlueViewController: UIViewController {
         
         self.dataLabel.text = data
         
-        dataDelegate?.recieveData(response: "delegate works well~")
+        dataDelegate?.receiveData(response: "delegate works well~")
         self.navigationController?.popViewController(animated: true)
     }
 }
