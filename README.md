@@ -44,6 +44,11 @@
 | [Delegate Pattern With Role Play](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/DelegatePatternWithRolePlay)| 보스가 비서에게 해야할 일을 위임하는 코드 구현|
 | [MVVM](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/MVVM)| MVVM 공부 및 정리|
 
+# Etc.
+| 제목 | 설명|
+|:-:|:-:|
+| [CocoaPods / Alamofire 설치 정리](https://github.com/KayAhn0126/iOS-Study/tree/main/Etc/HowToInstallCocoapods)| CocoaPods / Alamofire 설치 순서 및 오류 정리|
+
 # SwiftUI
 | 제목 | 설명 |
 |:-:|:-:|
