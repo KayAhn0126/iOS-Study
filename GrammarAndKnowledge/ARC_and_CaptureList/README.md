@@ -1,5 +1,47 @@
-# ARC와 캡쳐리스트
-[애플 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html) 기반 공부 후 정리 & Credit to [Mark Moeykens](https://www.youtube.com/watch?v=1LnipXiSrSM&list=RDCMUChH6WbyYeX0INJjrK2-6WSg&index=4)
+# 캡쳐/캡쳐리스트와 ARC
+
+## 🍎 캡쳐와 캡쳐리스트
+### 📖 알아보기
+- 클로져는 참조 타입
+- 클래스의 객체처럼 힙 메모리에 저장.
+    - 명령어는 코드 영역
+    - address는 힙에 저장
+    - 실행은 스택 영역
+- 클로져는 참조 타입이라 없어지기 전까지 힙 영역에 존재
+
+### 📖 캡쳐현상
+- value 캡쳐
+    - 클로져가 선언되었을 당시에 값 캡쳐 (메모리 주소 캡쳐 X)
+    ```swift
+    var num = 1
+    let valueCaptureListClosure = { [num] in
+        print("밸류값 출력(캡처리스트): \(num)")
+    }
+    num = 7
+    valueCaptureListClosure()      // 클로저에서 저장한 1 출력
+    ```
+- reference 캡쳐
+    - 클로져가 선언되었을 당시에 클로져의 주소 캡쳐 (메모리 주소 캡쳐 O)
+    ```swift
+    var num = 1
+
+    let valueCaptureClosure = {
+        print("밸류값 출력(캡처): \(num)")
+    }
+
+    num = 7
+    valueCaptureClosure()   // 7
+
+    num = 1
+    valueCaptureClosure() // 1
+    ```
+    - valueCaptureClosure에 클로져의 메모리 주소가 담겨있다.
+        - var john = Person(name: "john") 구조를 생각.
+    - 클로져 내 num도 reference 캡쳐를 당하고 있음.
+- 값 캡쳐 -> 외부요인에 의한 값 변경 방지
+- 주소 캡쳐 -> 강한 참조. weak, unowned를 통해 해결
+- 함수나 논이스케이핑 클로져가 실행되는 스택은 함수 or Non-Escaping Closure의 종료에 맞춰 사라지지만, 힙에 할당한 메모리(Escaping Closure)는 사용자가 일부러 해제시키거나 프로그램이 종료 될때까지 해제되지 않는다.
+- 즉, 위의 코드에서 valueCaptureClosure 변수는 클로져의 메모리 주소를 참조하고있고, 클로져의 메모리는 num 변수의 메모리 주소를 참조하고 있다. 클로져가 힙에서 없어지지 않는 이상 num의 reference count는 항상 1이 된다는 이야기.
 
 ## 🍎 ARC
 - ARC는 Swift의 메모리 관리 방법
@@ -254,3 +296,4 @@ popup: DatePopupViewController!
 ## 🍎 Citation
 - [애플 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
 - [Mark Moeykens](https://www.youtube.com/watch?v=1LnipXiSrSM&list=RDCMUChH6WbyYeX0INJjrK2-6WSg&index=4)
+- [클로저의 메모리 구조 + 캡처현상 / 캡처리스트](https://yesiamnahee.tistory.com/164)
