@@ -31,9 +31,9 @@ throw VendingMachineError.insufficientFunds(coinsNeeded: 5)
 - 함수 선언부 파라미터 뒤, 반환 타입 전에,throws 키워드를 붙임으로써 에러가 발생할 수 있는 함수가 된다.
 - 이 함수를 throwing 함수라고 한다.
 ```swift
-func canThrowErrors() throws -> String
+func canThrowErrors() throws -> String // throwing 함수
 
-func cannotThrowErrors() -> String
+func cannotThrowErrors() -> String // non - throwing 함수
 ```
 - **throwing 함수는 내부에서 throw된 에러를 해당 함수를 호출한 곳으로 전달한다.**
 - **오직 throwing 함수만 에러를 해당 함수를 호출한 곳으로 전달이 가능하다. non-throwing 함수라면 모든 오류는 함수 내에서 처리해야 한다.**
@@ -91,7 +91,7 @@ func buyFavoriteSnack(person: String, vendingMachine: VendingMachine) throws {
 }
 ```
 - vend(itemNamed:) 메서드가 에러를 던질수 있는 'throwing function'이기 때문에 함수 호출 시 try 키워드를 앞에 붙인다.
-- throwing function 처럼 throwing initializer 또한 같은 방식으로 작동한다.
+- **참고만 하자!** throwing function 처럼 throwing initializer 또한 같은 방식으로 작동한다.
 ```swift
 struct PurchasedSnack {
     let name: String
@@ -123,7 +123,8 @@ do {
 
 ```swift
 catch {
-    print("catched an \(error)")
+    print("catched an \(error)") // 즉 위의 catch문들에서 걸러지지 못한 에러를 로컬 상수 error에 바인딩 해줘,
+                                 // 개발자가 놓친 에러를 잡아줄 수 있게 도와준다.
 }
 ```
 
