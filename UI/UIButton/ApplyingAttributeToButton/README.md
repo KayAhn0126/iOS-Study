@@ -1,12 +1,13 @@
 # Applying a new attribute to the UIButton
-
 ## 🍎 새로운 속성 적용 전,후 비교 이미지
 
 ### 📖 속성 적용 전
-![](https://i.imgur.com/9nc7vlf.png)
+![](https://i.imgur.com/Q1soVa0.png)
+
 
 ### 📖 새로운 속성 적용 후 
-![](https://i.imgur.com/EakiEaS.png)
+![](https://i.imgur.com/4g0rwHo.png)
+
 
 ## 🍎 전체적인 흐름.
 - UIButton에는 setAttributedTitle이라는 메서드가 있다.
@@ -39,7 +40,8 @@ private func setupAttribute() {
 - 바로 위에 코드를 보면 **generateButtonAttribute(_: texts: fonts: colors:)** 라는 메서드를 통해 생성 되었음을 알 수 있다.
 - **generateButtonAttribute(_: texts: fonts: colors:** 메서드의 구현부를 보자
 - 모든 UIViewController에서 사용할 수 있도록 UIViewController를 extension.
-![](https://i.imgur.com/aFLwGHO.png)
+![](https://i.imgur.com/IBkyx6e.png)
+
 - UIViewController+Extension 내부 
 ```swift
 extension UIViewController {
@@ -78,7 +80,8 @@ extension UIViewController {
 ```
 - generateButtonAttribute 메서드의 매개변수는 다중 가변 매개변수(Multiple Variadic Parameters)를 적용해 하나의 파라미터로 여러개의 인자를 받고 메서드 내부에서는 배열로 사용할 수 있도록 했다.
 - 메서드의 반환 타입이 NSMutableAttributedString이다.
-![](https://i.imgur.com/WfpnXAa.png)
+![](https://i.imgur.com/LNief2c.png)
+
 - NSMutableAttributedString은 NSAttributedString을 상속받은 클래스.
     - NSAtrributedString은 텍스트의 스타일을 설정할 수 있는 텍스트 타입이다.
     - NSMutableAttributedString은 NSAttributedString의 특정 구간(들)에 여러 스타일을 설정할 수 있는 텍스트 타입이다.

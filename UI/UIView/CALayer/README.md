@@ -6,7 +6,7 @@
 - 그럼, Core Animation은 무엇인가? -> 아래의 표를 보고 GPU부터 위로 올라오면서 이해하기.
 
 ## 🍎 앱에서 그래픽 연산을 처리하기 위해 어떤 방식으로 작동하는지 알아야한다.
-![](https://i.imgur.com/qiNjO2S.png)
+![](https://i.imgur.com/EKzm04l.png)
 - **OpenGL**
     - 개발자는 iOS 초기에 OpenGL을 통해 GPU에 빠르게 엑세스함으로써 부드러운 화면 구성이 가능했다.
     - 하지만, 단순한 작업에도 코드의 양이 매우 방대해져 대안이 필요.

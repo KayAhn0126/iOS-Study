@@ -18,7 +18,7 @@
 superView.layer.masksToBounds = true
 ```
 ## 🍎 clipsToBounds와 masksToBounds 정리 표
-![](https://i.imgur.com/P0RVRKO.png)
+![](https://i.imgur.com/z9TBe5T.png)
 
 ## 🍎 Citation
 - [개발자 소들이](https://babbab2.tistory.com/47)
