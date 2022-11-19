@@ -49,7 +49,8 @@
 | :-: | :-: |
 | [Delegate Pattern](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/DelegatePattern) | PartyDirector가 PartyWorker에게 일을 위임하는 패턴을 코드로 구현 | 
 | [Delegate Pattern <br> With Role Play](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/DelegatePatternWithRolePlay)| 보스가 비서에게 해야할 일을 위임하는 코드 구현|
-| [Delegate Pattern <br> With Protocol](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/DelegateProtocolwithLowCoupling) | VC간 데이터를 옮길때 Protocol을 이용한 결합도 낮추기 |
+| [Delegate Protocol <br> With Low Coupling](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/DelegateProtocolwithLowCoupling) | VC간 데이터를 옮길때 Protocol을 이용한 결합도 낮추기 |
+| [Delegate Protocol <br> With Low Coupling & <br> Preventing Retain Cycle](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/ConsideringRetainCycleWhenUseOfDelegateProtocol)| VC간 데이터를 옮길때 Protocol을 이용한 결합도 낮추기 + Retain Cycle 예방 |
 | [MVVM](https://github.com/KayAhn0126/iOS-Study/tree/main/DesignPattern/MVVM) | MVVM 공부 및 정리 |
 
 # SwiftUI
