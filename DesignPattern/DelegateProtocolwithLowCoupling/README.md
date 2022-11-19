@@ -1,4 +1,4 @@
-# Delegate With Protocol
+# Delegate Protocol with Low Coupling
 
 ## 🍎 ViewController간 데이터를 옮기는 방식
 
