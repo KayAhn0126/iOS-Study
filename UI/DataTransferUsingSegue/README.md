@@ -1,4 +1,4 @@
-# Segue를 통한 Navigation Controller 사용
+# segue를 사용했을 때 두 VC간 데이터 전달 방법 정리
 - segue를 이용해 Navigation 방식으로 다음VC(SettingVC)를 띄우고 띄워진 VC에서 설정한 값을 기존 VC(DisplayVC)로 가져와 세팅하는 과정 정리 + 설정한 값 유지하기
 
 ## 🍎 기존에 코드를 통해 사용한 Navigation Controller 및 데이터 전달
