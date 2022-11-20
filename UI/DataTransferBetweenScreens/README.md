@@ -43,7 +43,7 @@ self.presentingViewController?.dismiss(animated: true)
 self.navigationController?.popViewController(animated: true)
 ```
 
-## 🍎 VC를 이용한 데이터 전달 (VC간 결합도가 높다)
+## 🍎 VC를 이용한 데이터 전달 (VC간 결합도 높음)
 - GreenVC에서 BlueVC의 프로퍼티(greenVC)에 자신을 넘겨주고, BlueVC에서는 greenVC 프로퍼티를 통해 GreenVC에 있는 메서드 실행.
 - 즉, GreenVC -> BlueVC -> GreenVC 메서드 호출
 - **GreenVC**
@@ -98,10 +98,10 @@ class BlueViewController: UIViewController {
 }
 ```
 
-## 🍎 Delegate 이용 (VC간 결합도 낮음)
+## 🍎 Delegate 이용 (VC간 결합도 낮음 + Retain Cycle 예방)
 - 먼저 결합도를 낮추기 위해 프로토콜 생성
 ```swift
-protocol SendDataDelegate {
+protocol SendDataDelegate: AnyObject {
     func receiveData(response : String) -> Void
 }
 ```
@@ -133,11 +133,11 @@ class GreenViewController: UIViewController, SendDataDelegate {
 ```swift
 import UIKit
 
-class BlueViewController: UIViewController {
+class BlueViewController: UIViewController, SendDataDelegate {
     
     @IBOutlet weak var dataLabel: UILabel!
     var data : String = ""
-    var dataDelegate : SendDataDelegate?
+    weak var dataDelegate : SendDataDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
