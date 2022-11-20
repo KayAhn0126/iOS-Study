@@ -29,8 +29,10 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 ```
 
 ## 🍎 설정한 값 유지하기
-- 다시 SettingVC를 띄우는 경우, 이전 데이터가 남아있지 않는다 이러한 경우를 위해, 다음 VC가 띄워지기 전 현재 화면의 값을 다음 화면의 프로퍼티에 세팅 해주면 값이 유지되는 것처럼 보인다!
+- 다시 SettingVC를 띄우는 경우, 이전 데이터가 남아있지 않는다 이러한 경우를 위해, 현재 VC의 값을 다음 VC의 프로퍼티에 세팅 해주고 다음 VC를 로드하는 과정에서 다시 세팅을 해준다면 값이 유지되는 것처럼 보인다!
+- 다음 VC내 프로퍼티에 값을 넘겨주는 코드
 ```swift
+// DisplayViewController
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let settingViewController = segue.destination as? SettingViewController {
         settingViewController.delegate = self
@@ -38,6 +40,22 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         settingViewController.textColor = customLabel.textColor
         settingViewController.backGroundColor = backGroundView.backgroundColor!
     }
+}
+```
+- 이전 VC에서 세팅된 값을 UI에 적용하는 코드
+```swift
+// SettingViewController
+override func viewDidLoad() {
+    super.viewDidLoad()
+    configurePreviousSetting()
+}
+
+private func configurePreviousSetting() {
+    if let textFromPreviousVC = textFromPreviousVC {
+        textfield.text = textFromPreviousVC
+    }
+    changeTextColor(textColor)
+    changeBackgroundColor(backGroundColor)
 }
 ```
 - 약간의 눈속임처럼 보이는데, 이것이 최상의 방법인지 생각해보자!
