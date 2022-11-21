@@ -10,6 +10,7 @@
 
 ## 🍎 Alignment
 - Stack View의 sub view들을 어떤식으로 정렬할지 결정하는 속성
+- 즉, Stack View내에서 아이템들을 어디에 놓을것입니까?
 - Fill
 ![](https://i.imgur.com/CgojqlK.png)
     - stack view의 방향이
@@ -19,7 +20,7 @@
             - 좌 우 공간을 채우기 위해 sub view들을 늘린다.
 - Top
 ![](https://i.imgur.com/gyzQFg5.png)
-    - Horizontal stack view에서 sub view들이 top에 맞춰 정렬한다.
+    - Horizontal stack view에서 sub view들을 top에 맞춰 정렬한다.
 - Bottom
 ![](https://i.imgur.com/CbYAaRl.png)
     - Horizontal stack view에서 스택뷰의 아랫쪽에 맞춰 정렬한다.
@@ -41,7 +42,8 @@
     - sub view들이 last baseline에 맞춰 정렬한다. (오직 horizontal stack view에서만 사용가능)
     
 ## 🍎 Distribution
-- StackView안에 들어가는 sub view들의 사이즈를 어떻게 분배할지 설정하는 속성
+- Stack View안에 들어가는 sub view들의 사이즈를 어떻게 분배할지 설정하는 속성
+- 즉, Stack View안에서 아이템들간 간격을 어떻게 할것입니까?
 - Fill
 ![](https://i.imgur.com/XzAC1BG.png)
     - stack view의 방향에 따라 가능한 공간을 모두 채우기 위해 sub view들의 사이즈를 재조정한다. 
