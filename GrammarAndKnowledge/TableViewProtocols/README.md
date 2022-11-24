@@ -1,4 +1,4 @@
-# TableView를 유용하게 만들어주는 DataSource와 Delegate 프로토콜 알아보기
+# TableViewDataSource와 TableViewDelegate 프로토콜
 - DataSource 프로토콜
     - 테이블 뷰를 생성하고 수정하는데 필요한 정보를 테이블 뷰 객체에 제공
 ```swift
