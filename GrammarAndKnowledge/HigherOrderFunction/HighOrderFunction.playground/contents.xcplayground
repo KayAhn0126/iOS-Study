@@ -8,5 +8,6 @@
         <page name='components'/>
         <page name='components+compactMap'/>
         <page name='flatMap and compactMap'/>
+        <page name='SafeTraversal'/>
     </pages>
 </playground>
