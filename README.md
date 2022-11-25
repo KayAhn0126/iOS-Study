@@ -19,21 +19,23 @@
 # Grammar & knowledge
 | 제목 | 설명 |
 | :-: | :-: |
-| [AppDelegate / UserDefaults](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/HowToStoreData) | AppDelegate와 UserDefaults를 사용한 데이터 저장 및 전달 방법 정리 |
+| [AppDelegate / UserDefaults](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/HowToStoreData) | AppDelegate와 UserDefaults를 사용한 데이터 저장 및 전달 방법 정리 
+| [Handling Objects in UserDefaults](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/HandlingObjectInUserDefaults)| 프로퍼티 객체 타입이 아닌 구조체 인스턴스를 userDefaults에 저장하고 불러오는 방법 및 시행착오 정리 |
 | [Associated Type](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/AssociatedType) | associatedtype 정리 |
 | [Closure](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Closure) | 기본 클로저 정리 |
 | [Notification Center](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/NotificationCenter) | Notification Center 정리 |
-| [Higher Order Functions](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/HigherOrderFunction) | 고차함수 정리 |
+| [Higher Order Functions](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/HigherOrderFunction) | [map](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/HigherOrderFunction/HighOrderFunction.playground/Pages/map.xcplaygroundpage/Contents.swift) <br> [filter](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/HigherOrderFunction/HighOrderFunction.playground/Pages/filter.xcplaygroundpage/Contents.swift) <br> [reduce](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/HigherOrderFunction/HighOrderFunction.playground/Pages/reduce.xcplaygroundpage/Contents.swift) <br> [split](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/HigherOrderFunction/HighOrderFunction.playground/Pages/split.xcplaygroundpage/Contents.swift) <br> [components](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/HigherOrderFunction/HighOrderFunction.playground/Pages/components.xcplaygroundpage/Contents.swift) <br> [compnents + compactMap](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/HigherOrderFunction/HighOrderFunction.playground/Pages/components%2BcompactMap.xcplaygroundpage/Contents.swift) <br> [flatMap / compactMap](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/HigherOrderFunction/HighOrderFunction.playground/Pages/flatMap%20and%20compactMap.xcplaygroundpage/Contents.swift) <br> [Safe Traversal](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/HigherOrderFunction/HighOrderFunction.playground/Pages/SafeTraversal.xcplaygroundpage/Contents.swift) |
 | [Metatype](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Metatype) | 메타 타입 정리 |
 | [Generic](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Generic) | 제네릭 정리 |
 | [Number Formatter](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/NumberFormatter) | NumberFormatter 정리 |
 | [Date Formatter](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/DateFormatter)| DateFormatter 정리 |
 | [ARC / Capture List](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/ARC_and_CaptureList) | ARC와 Capture List 정리 |
 | [ScrollView & StackView](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/StackViewAndScrollView) | 스크롤뷰와 스택뷰를 스토리보드와 코드로 구현 |
-| [Basic TableView & Collection View](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/TableViewAndCollectionView) | 기본 TableView 및 CollectionView 구조 정리와 CollectionView의 FlowLayout과 CompositionalLayout 비교 |
+| [Basic TableView & Collection View](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/TableViewAndCollectionView) | 기본 TableView 및 CollectionView 구조 정리와 CollectionView의 FlowLayout과 CompositionalLayout 비교 
+| [TableViewDataSource / TableViewDelegate](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/TableViewProtocols)| TableView에서 자주 사용되는 프로토콜 및 프로토콜 내 메서드 정리 |
 | [Modern Collection View](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/ModernCollectionView) | 복잡한 뷰 및 데이터 일관성을 위한 Compositional Layout 공부 |
 | [@propertyWrapper](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/PropertyWrapper) | [기본 propertyWrapper 사용법 정리](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/PropertyWrapper/PropertyWrapper.playground/Pages/Basic%20PropertyWrapper.xcplaygroundpage/Contents.swift) <br> [wrapped된 property에 초기값 넣는 방법 정리](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/PropertyWrapper/PropertyWrapper.playground/Pages/PropertyWrapper%20%26%20Initializer.xcplaygroundpage/Contents.swift) <br> [projectedValue를 통해 새로운 값을 저장하기 전, 조정이 있었는지 확인하기](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/PropertyWrapper/PropertyWrapper.playground/Pages/ProjectedValue.xcplaygroundpage/Contents.swift) |
-| [@Sendable](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/SendableKeyword) | [Error 열거형 선언 / 데이터 수신 여부에 따른 프로세스(escaping)](https://github.com/KayAhn0126/Network/blob/main/Network%20in%20iOS.playground/Pages/Fetch%20Method.xcplaygroundpage/Contents.swift)에서 URLSession내 dataTask 메서드 분석 중 발견한 @Sendable 키워드 정리 |
+| [@Sendable](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/SendableKeyword) | [Error 열거형 선언 / 데이터 수신 여부에 따른 프로세스(escaping)](https://github.com/KayAhn0126/Network/blob/main/GithubProfile_BasicAndCombine/GithubProfile_BasicAndCombine.playground/Pages/Fetch%20Method.xcplaygroundpage/Contents.swift)에서 URLSession내 dataTask 메서드 분석 중 발견한 @Sendable 키워드 정리 |
 | [Error Handling](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/ErrorHandling) | Error Handling 정리 & TBU |
 | [Self vs self](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Self_vs_self) | Self와 self에 대한 정리 |
 | [Regular Expression](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/RegularExpression) | 정규식 정리 |
@@ -84,6 +86,9 @@
 | [GithubUserSearchWithMVVM](https://github.com/KayAhn0126/GithubUserSearchWithMVVM) | [기존 프로젝트](https://github.com/KayAhn0126/GithubUserSearch)에 유지/보수 목적으로 MVVM 패턴 적용 |
 | [Toss Benefit Tab](https://github.com/KayAhn0126/TossBenefit) | Section별 다른 구조의 cell을 보여주는 토스 혜택 탭 |
 | [Catstagram](https://github.com/KayAhn0126/Catstagram) | |
+
+# FC-30 / ToBeUpdated
+- Lets GO!
 
 # Etc.
 | 제목 | 설명 |
