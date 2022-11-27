@@ -7,7 +7,8 @@
 | [UILabel](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UILabel) | UILabel 관련 항목 |
 | [UIButton](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIButton) | UIButton 관련 항목 |
 | [UIColor](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIColor) | UIColor 관련 항목 |
-| [UIAlertController](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIAlertController) | UIAlert 관련 항목 |
+| [UIAlertController](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIAlertController) | UIAlertController 관련 항목 |
+| [UITabBarController](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UITabBarController)| UITabBarController 관련 항목 |
 | [스토리보드 없이 프로젝트 시작하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/HowToRemoveStoryboard) | 코드로 UI를 구성시 불필요한 스토리보드 삭제 방법 메모 |
 | [main이 아닌 스토리보드에서 앱 시작하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/HowToStartWithOtherStoryboard) | main이 아닌 다른 스토리보드에서 앱 시작하기 방법 정리 <br> < 특정 화면 구현시 앱 실행 후 즉각적인 테스트 가능 > |
 | [화면 전환 방법](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/ScreenTransition) | 프레젠테이션, 내비게이션을 이용한 화면 전환에 대한 정리 |
