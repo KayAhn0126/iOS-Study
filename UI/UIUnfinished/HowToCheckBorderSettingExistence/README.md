@@ -1,4 +1,4 @@
-# UITextView는 가지고 있지 않은 borderStyle
+# borderStyle을 가지는 클래스의 기준은 무엇인가?
 
 ## 🍎 문제 정의
 - 내용 Label 하단에 Text view를 넣어주었다. 하지만 아래와 같이 text view의 border가 보이지 않았다.
