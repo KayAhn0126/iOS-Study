@@ -1,5 +1,5 @@
 # UIDatePicker 기본정리
-- 설명에서 사용된 코드는 [UIKit - Date Picker 사용하기, iOS 14 변경사항 정리](https://kasroid.github.io/posts/ios/20201030-uikit-date-picker/)에서 가져왔습니다.
+- 아래 내용은 [UIKit - Date Picker 사용하기, iOS 14 변경사항 정리](https://kasroid.github.io/posts/ios/20201030-uikit-date-picker/)의 코드를 가져와 일부 수정하며 테스트 한 내용을 정리한 것
 
 ```swift
 import UIKit
@@ -95,11 +95,39 @@ datePicker.locale = Locale(identifier: "ko-KR")
 ```
 
 ### 📖 minuteInterval
+- 사용자가 스크롤을 돌려 시간을 설정할 때 나타나는 분 단위 간격을 조절하는 프로퍼티이다. 기본은 1분으로 되어있고 최대 30분으로 설정 할 수 있고 60의 약수 미만에서 입력하면 된다.
+```swift
+datePicker.minuteInterval = 15
+```
+![](https://i.imgur.com/J2I1HEM.png)
 
 
+### 📖 date
+- 최초에 선택 되어있는 날짜를 설정하는 프로퍼티, 기본은 현재 날짜이다.
+- datePickerMode가 .countDownTimer일 경우, 0:00에서 시작한다.
+- default is current date when picker created. Ignored in countdown timer mode. for that mode, picker starts at 0:00
+```swift
+datePicker.date = Date(timeIntervalSinceNow: -3600 * 24 * 3)
+```
+- 위 코드 적용 시 3일 전으로 세팅되는것을 볼 수 있다.
 
+| 코드 미적용 | 코드 적용 |
+| :-: | :-: |
+| ![](https://i.imgur.com/Q6oMdvw.png) | ![](https://i.imgur.com/tdtgrI6.png) |
 
-
+### 📖 minimumDate, maximumDate
+- 사용자가 선택할 수 있는 날짜나 시간을 한정할 수 있게 도와주는 프로퍼티.
+- .compact나 .inline모드에서는 선택할 수 있는 날짜가 연한 회색으로 비 활성화되고, .wheel모드에서는 선택해둔 범위를 넘어가는 스크롤을 하는 경우 가장 가까운 날짜 또는 시간으로 이동한다.
+```swift
+var components = DateComponents()
+components.day = 10
+let maxDate = Calendar.autoupdatingCurrent.date(byAdding: components, to: Date())
+components.day = -10
+let minDate = Calendar.autoupdatingCurrent.date(byAdding: components, to: Date())
+datePicker.maximumDate = maxDate
+datePicker.minimumDate = minDate
+```
+![](https://i.imgur.com/xvby4n0.gif)
 
 
 ## 🍎 Citation
