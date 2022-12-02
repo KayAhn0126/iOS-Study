@@ -129,6 +129,18 @@ datePicker.minimumDate = minDate
 ```
 ![](https://i.imgur.com/xvby4n0.gif)
 
+### 📖 locale
+- [locale 프로퍼티에 대한 공식 문서](https://developer.apple.com/documentation/uikit/uidatepicker/1615995-locale)에 따르면 "기본으로 설정된 locale 값은 NSLocale의 'current'프로퍼티가 반환한 값 또는 date picker의 캘린더에 사용된 locale로 정한다"라는 설명이 있다. locale은 언어, 문화 날짜 표기 방법 등 정보들을 캡슐화 하고 있다.
+- 가장 기본적인 locale 설정 방법은 아래의 코드와 같다.
+```swift
+datePicker.locale = Locale(identifier: "ko-KR")
+// or
+datePicker.locale = Locale(identifier: "en-EN")
+```
+|  KR  |  EN  |
+|:----:|:----:|
+|  ![](https://i.imgur.com/ZelXHoS.png) | ![](https://i.imgur.com/ZglNrmM.png) |
+
 
 ## 🍎 Citation
 - [Apple 공식 문서 UIDatePicker.Mode](https://developer.apple.com/documentation/uikit/uidatepicker/mode)
