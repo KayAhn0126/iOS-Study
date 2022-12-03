@@ -4,6 +4,7 @@
 | 제목 | 설명 |
 | :-: | :-: |
 | [UIView](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIView) | UIView 관련 항목 |
+| [UIControl](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIControl) | UIControl 관련 항목 |
 | [UILabel](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UILabel) | UILabel 관련 항목 |
 | [UIButton](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIButton) | UIButton 관련 항목 |
 | [UIColor](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIColor) | UIColor 관련 항목 |
@@ -91,7 +92,7 @@
 | [Catstagram](https://github.com/KayAhn0126/Catstagram) | |
 
 # FC-30 / ToBeUpdated
-- Lets GO!
+
 
 # Etc.
 | 제목 | 설명 |
