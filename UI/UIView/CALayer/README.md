@@ -24,14 +24,15 @@
 ## 🍎 UIView는 화면을 그리는 행위는 Core Animation Layer에게 위임한다
 - UIView는 레이아웃, 터치 이벤트 등 많은 작업을 처리하지만 뷰 위에 컨텐츠나 애니메이션을 그리는 행위는 직접하지 않고 Core Animation Layer에게 위임한다.
 - UIView 클래스에는 layer라는 프로퍼티가 있고, UIView 클래스는 CALayerDelegate 프로토콜을 채택하고 있어 UIView 클래스가 CALayer 클래스의 해야할 일을 대신 처리해 주고 있다고 생각하면 된다.
-    ```swift
-    var myView = UIView()
-    myView.backgroundColor = .blue
-    ```
-    - 위의 코드는 CALayer의 역할을 UIView에게 위임 했기 때문에 결국 아래의 코드와 같은 의미
-    ```swift
-    myView.layer.backgroundColor을 .blue.cgColor
-    ```
+![](https://i.imgur.com/LKnbvSP.png)
+```swift
+var myView = UIView()
+myView.backgroundColor = .blue
+```
+- 위의 코드는 CALayer의 역할을 UIView에게 위임 했기 때문에 결국 아래의 코드와 같은 의미
+```swift
+myView.layer.backgroundColor = .blue.cgColor
+```
 
 ## 🍎 언제 UIView를 사용해야 하나?
 - UIView에서 built-in으로 제공되는 터치 이벤트, 또는 다른 작업들을 CALayer를 통해 사용하려면 직접 구현해서 사용해야 한다. 즉, 꼭 CALayer로 직접 구현해야 하는 상황이 아니라면, 유저 상호작용 기능이 구현되어있는 UIView를 이용.
