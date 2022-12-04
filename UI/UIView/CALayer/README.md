@@ -5,7 +5,7 @@
 - CALayer의 CA는 'Core Animation'의 약자.
 - 그럼, Core Animation은 무엇인가? -> 아래의 표를 보고 GPU부터 위로 올라오면서 이해하기.
 
-## 🍎 앱에서 그래픽 연산을 처리하기 위해 어떤 방식으로 작동하는지 알아야한다.
+## 🍎 앱에서 그래픽 연산을 처리하기 위해 어떤 방식으로 작동하는지 알아야한다
 ![](https://i.imgur.com/EKzm04l.png)
 - **OpenGL**
     - 개발자는 iOS 초기에 OpenGL을 통해 GPU에 빠르게 엑세스함으로써 부드러운 화면 구성이 가능했다.
@@ -21,28 +21,36 @@
     - UIView, UIViewController등등 UI로 시작하는 Class들은 여기서 파생
     - 우리가 UIKit에 속한 UIView를 이용해 쉽게 화면을 구성할 수 있었던 것.
 
-## 🍎 UIView가 화면을 그리는 행위는 Core Animation에게 위임한다.
-- UIView는 레이아웃, 터치 이벤트 등 많은 작업을 처리.
-- 하지만 뷰 위에 컨텐츠나 애니메이션을 그리는 행위는 직접하지 않고 Core Animation에게 위임.
-- 그것이 바로 **layer**.
+## 🍎 UIView는 화면을 그리는 행위는 Core Animation Layer에게 위임한다
+- UIView는 레이아웃, 터치 이벤트 등 많은 작업을 처리하지만 뷰 위에 컨텐츠나 애니메이션을 그리는 행위는 직접하지 않고 Core Animation Layer에게 위임한다.
+- UIView 클래스에는 layer라는 프로퍼티가 있고, UIView 클래스는 CALayerDelegate 프로토콜을 채택하고 있어 UIView 클래스가 CALayer 클래스의 해야할 일을 대신 처리해 주고 있다고 생각하면 된다.
+    ```swift
+    var myView = UIView()
+    myView.backgroundColor = .blue
+    ```
+    - 위의 코드는 CALayer의 역할을 UIView에게 위임 했기 때문에 결국 아래의 코드와 같은 의미
+    ```swift
+    myView.layer.backgroundColor을 .blue.cgColor
+    ```
 
 ## 🍎 언제 UIView를 사용해야 하나?
 - UIView에서 built-in으로 제공되는 터치 이벤트, 또는 다른 작업들을 CALayer를 통해 사용하려면 직접 구현해서 사용해야 한다. 즉, 꼭 CALayer로 직접 구현해야 하는 상황이 아니라면, 유저 상호작용 기능이 구현되어있는 UIView를 이용.
+- 즉, CALayer를 UIView처럼 만들기는 복잡하니 이미 구현이 다 되어있는 UIView내 layer 프로퍼티를 사용하라는 의미.
 
 ## 🍎 언제 CALayer를 사용해야 하나?
 - CALayer를 찾아보다 [UIView와 CALayer의 차이점](https://stackoverflow.com/questions/7826306/what-are-the-differences-between-a-uiview-and-a-calayer)라는 글을 보았다.
 - 여러 화면들을 그릴때 CALayer를 직접 사용하는것과 일반적으로 사용하는 UIView들을 이용해 그리는것을 비교했을때, 비교할 수 있을만한 성능의 차이는 없다고 한다.
 - 그럼에도 몇몇 사용자들이 CALayer를 사용하는 이유는 Mac으로의 이식성을 고려했기 때문이라고 한다.
-- UIView -> iOS
-- NSView -> MacOS
+- UIView -> for iPhone(iOS)
+- NSView -> for Mac(MacOS)
 - UIView와 NSView의 윗단에 있는 CALayer -> iOS,MacOS
 
 
-## 🍎 UIView와 CALayer의 차이점.
+## 🍎 UIView와 CALayer의 차이점
 - UIView
     - UIKit에서 제공하는 클래스
     - CALayer보다 한단계 높은 레벨의 인터페이스
-    - **메인스레드에서 CPU를 사용해 UI 그림**
+    - **메인스레드에서 CPU를 사용해 작업 처리**
     - CALayer를 감싼 Wrapper로 CALayer에서 제공하지 않는 탭, 터치, 핀치 등, 유저 인터렉션을 제공 (UIResponder)상속.
     - 단순한 애니메이션 또는 퍼포먼스에 대한 요구가 크지 않는 상황에 사용.
 - CALayer
@@ -52,9 +60,10 @@
     - UIView와 달리 별도의 Responder가 없어, 유저 인터렉션 기능은 직접 구현 및 설정 필요.
     - UIView에서 제공하지 않는 기능을 커스터마이징해서 사용 가능.
     - 복잡한 애니메이션, 퍼포먼스가 필요할 때 UIView 대신 사용 가능.
-    - MacOS로 이식 가능성.
+    - **MacOS로 이식 가능성.**
 
 ## 🍎 Citation
+- [UIView 공식 문서](https://developer.apple.com/documentation/uikit/uiview)
 - [CALayer 공식 문서](https://developer.apple.com/documentation/quartzcore/calayer)
 - [개발자 소들이](https://babbab2.tistory.com/53)
-- [송태환](https://velog.io/@songtaehwan/iOS-Views-vs-Layers)
+- [UIView와 CALayer의 차이점](https://fassko.medium.com/uiview-vs-calayer-b55d932ff1f5)
