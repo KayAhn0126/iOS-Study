@@ -15,7 +15,7 @@
 func setAttributedTitle(_ title: NSAttributedString?,
                         for state: UIControl.State)
 ```
-- 즉, NSAttributedString 타입과 UIControl.State 타입의 값A을 매개변수로 넘겨주면 해당 버튼의 Title 속성을 방금 넘겨받은 속성으로 세팅한다.
+- 즉, NSAttributedString 타입과 UIControl.State 타입의 값을 매개변수로 넘겨주면 해당 버튼의 Title 속성을 방금 넘겨받은 속성으로 세팅한다.
 - 버튼에 새로운 속성을 적용하는 코드를 보자.
 ```swift
 private func setupAttribute() {
@@ -36,12 +36,11 @@ private func setupAttribute() {
      self.signUpButton.setAttributedTitle(attributes, for: .normal)
 }
 ```
-- setAttributedTitle 메서드의 인자로 들어있는 attributes는 어떻게 만들어졌을까?
+- 마지막 라인에서, setAttributedTitle 메서드의 첫 인자로 들어있는 attributes는 어떻게 만들어졌을까?
 - 바로 위에 코드를 보면 **generateButtonAttribute(_: texts: fonts: colors:)** 라는 메서드를 통해 생성 되었음을 알 수 있다.
-- **generateButtonAttribute(_: texts: fonts: colors:** 메서드의 구현부를 보자
-- 모든 UIViewController에서 사용할 수 있도록 UIViewController를 extension.
+- **generateButtonAttribute(_: texts: fonts: colors:)** 메서드의 구현부를 보자
+- 모든 UIViewController에서 사용할 수 있도록 UIViewController를 extension 했다.
 ![](https://i.imgur.com/IBkyx6e.png)
-
 - UIViewController+Extension 내부 
 ```swift
 extension UIViewController {
@@ -112,5 +111,3 @@ self.signUpButton.setAttributedTitle(attributes, for: .normal)
 ```
 - setAttributedTitle(_ title: NSAttributedString?, for state: UIControl.State) 메서드는 NSAttributedString를 받는데 NSMutableAttributedString이 어떻게 가능할까?
     - 위에도 써있지만NSMutableAttributedString은 NSAttributedString 상속 받았기 때문에 가능.
-
-
