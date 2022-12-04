@@ -8,13 +8,16 @@ open func addTarget(_ target: Any?, action: Selector, for controlEvents: UIContr
 ## 🍎 평소에 많이 사용하던 addTarget 메서드
 - 버튼이 클릭 되었을때 실행될 메서드를 추가하기 위해서 아래와 같이 addTarget 메서드를 사용 해본적이 있다.
 ```swift
-// 간단한 예제
+// 예제
 @IBOutlet weak var myButton: UIButton!
 myButton.addTarget(self, action: #selector(doSomething(_:)), for: .touchUpInside)
 ```
 
 ## 🍎 UIButton 이외 클래스 인스턴스에서 addTarget 메서드 사용하기
-- addTarget(_:, action:, for:) 메서드가 여러곳에서 유용하게 사용되는 경험을 바탕으로 공부 및 정리
+- 지금까지는 UIButton 클래스를 통해 생성한 인스턴스에서만 사용되는 메서드인줄 알고있었다.
+    - 후술할 내용이지만 addTarget메서드는 UIControl 클래스의 인스턴스 메서드.
+    - UIDatePicker와 UITextField는 UIControl을 상속받는다.
+- addTarget(_:, action:, for:) 메서드가 여러곳에서 유용하게 사용되는 경험을 바탕으로 공부 및 정리.
 - 이번 Diary 프로젝트를 진행하면서 UIButton이 아닌 다른 타입의 인스턴스에 addTarget 메서드를 적용하는 코드가 있었다.
     - UIDatePicker 
     ```swift
