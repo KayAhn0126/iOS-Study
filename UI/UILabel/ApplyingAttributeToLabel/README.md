@@ -1,13 +1,9 @@
 # Applying a new attribute to the label
 
 ## 🍎 새로운 속성 적용 전,후 비교 이미지
-
-### 📖 속성 적용 전
-![](https://i.imgur.com/JVpMdVp.png)
-
-### 📖 속성 적용 후
-![](https://i.imgur.com/C5VTqTb.png)
-
+| 속성 적용 전 | 속성 적용 후 |
+| :-: | :-: |
+| ![](https://i.imgur.com/crfU90Y.png) | ![](https://i.imgur.com/xSF8e2W.png) |
 - 자세히 보면 사용자(User)부분이 This is my cat! 보다 조금 더 두꺼운것을 볼수있다.
 
 ## 🍎 NSMutableAttributeString을 사용해 label의 구간에 따라 스타일 적용하기
