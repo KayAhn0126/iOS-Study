@@ -1,4 +1,4 @@
-# Applying a new attribute to the UIButton
+# Applying a new attribute to the button
 ## 🍎 새로운 속성 적용 전,후 비교 이미지
 
 ### 📖 속성 적용 전
