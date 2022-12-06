@@ -3,7 +3,7 @@
 # Make it mine
 - [extension을 이용해 attribute 세팅하기 >> NSAttribute-1](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UILabel/SettingAttributesOfLableThroughExtensions)
 - [Applying a new attribute to the label >> NSAttribute-2](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UILabel/ApplyingAttributeToLabel)
-- [Applying a new attribute to the button >> NSAttribute-3](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIButton/ApplyingAttributeToButton)
+- [Applying a new attribute to the UIButton >> NSAttribute-3](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIButton/ApplyingAttributeToButton)
 
 # UI
 | 제목 | 설명 |
@@ -83,21 +83,27 @@
 | [Insta Search](https://github.com/KayAhn0126/InstaSearch) | UICollectionView, Navigation Controller, 탭 바 컨트롤러, 서치 컨트롤러를 사용한 SNS 앱 |
 | [Nike Running Club](https://github.com/KayAhn0126/NRC) | UICollectionView, Page Controller를 사용한 운동 앱 |
 | [Apple FrameWork With Compositional Layout](https://github.com/KayAhn0126/AppleFrameworkWithCompositionalLayout) | DiffableDataSource, Snapshot, Compositional Layout을 사용한 애플 프레임 워크 |
-| [MeditationContentsList](https://github.com/KayAhn0126/MeditationContentsList) | DiffableDataSource, Snapshot, Compositional Layout 및 Snapshot의 활용, Bool 타입의 toggle() 메서드를 사용한 명상 컨텐츠 리스트 |
+| [Meditation Contents List](https://github.com/KayAhn0126/MeditationContentsList) | DiffableDataSource, Snapshot, Compositional Layout 및 Snapshot의 활용, Bool 타입의 toggle() 메서드를 사용한 명상 컨텐츠 리스트 |
 | [SpotifyPayWall](https://github.com/KayAhn0126/SpotifyPayWall) | DiffableDataSource, Snapshot, Compositional Layout, Page Control, NSCollectionLayoutSection 사용한 음악앱 및 orthogonalScrollingBehavior 사용법 |
 | [Apple Framework With Modal](https://github.com/KayAhn0126/AppleFrameworkWithModal) | DiffableDataSource, Snapshot, Compositional Layout, Modal-presentation, SafariServices를 사용한 애플 프레임 워크 설명 앱 |
 | [Meditation Contents List With Navigation](https://github.com/KayAhn0126/MeditationContentsListWithNavigation) | DiffableDataSource, Snapshot with two sections, Compositional Layout, Navigation Controller, UICollectionReusableView를 사용한 명상 컨텐츠 리스트 (상세 뷰 포함) |
 | [Apple Framework With Modal & Combine](https://github.com/KayAhn0126/AppleFrameworkWithModalAndCombine) | DiffableDataSource, Snapshot, Compositional Layout, Modal-presentation, SafariServices 및 Combine으로 파이프라인 구축 |
-| [GithubUserProfile](https://github.com/KayAhn0126/GithubUserProfile) | Navigation Controller, UISearchController, Combine, Kingfisher, Xcode Package Manager를 사용한 Github 사용자 프로필 검색 |
-| [GithubUserSearch](https://github.com/KayAhn0126/GithubUserSearch) | UICollectionView, DiffableDataSource, Snapshot, Compositional Layout, Navigation Controller, UISearchController, Combine, Kingfisher, Xcode package Manager를 사용한 Github사용자 아이디 검색 및 프로필 제공 |
-| [AppleFrameworkWithMVVM](https://github.com/KayAhn0126/AppleFrameworkWithMVVM) | [기존 프로젝트](https://github.com/KayAhn0126/AppleFrameworkWithModalAndCombine)내 'Model 데이터를 받아 처리하는 로직'을 ViewModel로 이전, View Controller의 역할 분담 및 추후 유지/보수 목적으로 MVVM 패턴 적용 |
-| [GithubUserProfileWithMVVM](https://github.com/KayAhn0126/GithubUserProfileWithMVVM) | Combine을 사용한 [기존 프로젝트](https://github.com/KayAhn0126/GithubUserProfile)에 유지/보수 목적으로 MVVM 패턴 적용 |
-| [GithubUserSearchWithMVVM](https://github.com/KayAhn0126/GithubUserSearchWithMVVM) | [기존 프로젝트](https://github.com/KayAhn0126/GithubUserSearch)에 유지/보수 목적으로 MVVM 패턴 적용 |
+| [Github User Profile](https://github.com/KayAhn0126/GithubUserProfile) | Navigation Controller, UISearchController, Combine, Kingfisher, Xcode Package Manager를 사용한 Github 사용자 프로필 검색 |
+| [Github User Search](https://github.com/KayAhn0126/GithubUserSearch) | UICollectionView, DiffableDataSource, Snapshot, Compositional Layout, Navigation Controller, UISearchController, Combine, Kingfisher, Xcode package Manager를 사용한 Github사용자 아이디 검색 및 프로필 제공 |
+| [Apple Framework With MVVM](https://github.com/KayAhn0126/AppleFrameworkWithMVVM) | [기존 프로젝트](https://github.com/KayAhn0126/AppleFrameworkWithModalAndCombine)내 'Model 데이터를 받아 처리하는 로직'을 ViewModel로 이전, View Controller의 역할 분담 및 추후 유지/보수 목적으로 MVVM 패턴 적용 |
+| [Github User Profile With MVVM](https://github.com/KayAhn0126/GithubUserProfileWithMVVM) | Combine을 사용한 [기존 프로젝트](https://github.com/KayAhn0126/GithubUserProfile)에 유지/보수 목적으로 MVVM 패턴 적용 |
+| [Github User Search With MVVM](https://github.com/KayAhn0126/GithubUserSearchWithMVVM) | [기존 프로젝트](https://github.com/KayAhn0126/GithubUserSearch)에 유지/보수 목적으로 MVVM 패턴 적용 |
 | [Toss Benefit Tab](https://github.com/KayAhn0126/TossBenefit) | Section별 다른 구조의 cell을 보여주는 토스 혜택 탭 |
 | [Catstagram](https://github.com/KayAhn0126/Catstagram) | |
 
 # FC-30 / ToBeUpdated
-
+| 프로젝트 | 설명 |
+| :-: | :-: |
+| [Quotes Generator](https://github.com/KayAhn0126/QuotesGenerator)| FC - 1 |
+| [LED Screen](https://github.com/KayAhn0126/LEDScreen) | FC - 2 |
+| [Calculator](https://github.com/KayAhn0126/Calculator) | FC - 3 |
+| [To Do List](https://github.com/KayAhn0126/ToDoList) | FC - 4 |
+| [Diary](https://github.com/KayAhn0126/Diary) | FC - 5 |
 
 # Etc.
 | 제목 | 설명 |
