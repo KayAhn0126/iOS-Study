@@ -34,7 +34,7 @@ self.dateTextField.sendActions(for: .editingChanged)
 - dateTextField에 editingChanged라는 이벤트를 전달한다.
     - 마치 dateTextField에서 editingChanged라는 이벤트가 발생한 것 처럼 된다.
 
-## 🍎 sendActions 메서드 사용 이유.
+## 🍎 sendActions 메서드 사용 이유
 - 이유는 객체에 이벤트를 보내기 위함이다.
 - datePicker는 날짜가 선택되면 (값이 변경되면) valueChanged라는 이벤트를 발생시킨다.
     - 현재는 dateTextField.inputView에 datePicker가 대입되어 있으므로 날짜가 바뀔때마다 생기는 이벤트는 valueChanged다.
