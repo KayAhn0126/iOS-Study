@@ -16,6 +16,7 @@
 | [UIAlertController](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIAlertController) | UIAlertController 관련 항목 |
 | [UITabBarController](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UITabBarController)| UITabBarController 관련 항목 |
 | [UIDatePicker](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIDatePicker) | UIDatePicker 관련 항목 |
+| [UIResponder](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIResponder) | UIResponder 관련 항목 |
 | [UIUnfinished](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIUnfinished) | 아직 결론을 맺지못한 질문 리스트 |
 | [스토리보드 없이 프로젝트 시작하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/HowToRemoveStoryboard) | 코드로 UI를 구성시 불필요한 스토리보드 삭제 방법 메모 |
 | [main이 아닌 스토리보드에서 앱 시작하기](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/HowToStartWithOtherStoryboard) | main이 아닌 다른 스토리보드에서 앱 시작하기 방법 정리 <br> < 특정 화면 구현시 앱 실행 후 즉각적인 테스트 가능 > |
