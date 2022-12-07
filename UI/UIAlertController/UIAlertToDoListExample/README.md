@@ -1,7 +1,7 @@
 # ToDoList에서 사용한 UIAlertController
 
 ## 🍎 구현 화면
-![](https://i.imgur.com/O4xsisH.png)
+![](https://i.imgur.com/UYretUH.png)
 - 숫자는 아래 코드와 매칭되는 영역
 ![](https://i.imgur.com/V0Te1j8.png)
 
