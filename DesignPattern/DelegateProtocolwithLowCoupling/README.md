@@ -70,6 +70,11 @@ class HomeViewController: UIViewController, DataTransferDelegate {
         let dataManager = FeedDataManager(self)
         dataManager.feedDataManager(input)
     }
+    
+    func sendData(_ dataFromServer: [FeedModel]) {
+        self.receivedData = dataFromServer
+        tableView.reloadData()
+    }
 }
 
 // 위임하는 VC를 DataTransferDelegate타입으로!
