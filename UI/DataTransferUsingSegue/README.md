@@ -5,8 +5,8 @@
 - Storyboard에 있는 view controller를 Navigation 방식으로 띄울때 아래와 같은 방법을 사용했다.
 ```swift
 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-let vc = storyboard.instantiateViewController(withIdentifier: "NextViewController") as! NextViewController
-vc.delegate = self
+let nextVC = storyboard.instantiateViewController(withIdentifier: "NextViewController") as! NextViewController
+nextVC.delegate = self
 self.navigationController?.pushViewController(vc, animated: true)
 ```
 
@@ -16,9 +16,12 @@ self.navigationController?.pushViewController(vc, animated: true)
 - 띄우는건 문제가 없다. 하지만 값을 전달 해야할때, 코드를 통해 다음 vc의 프로퍼티에 값을 넣어줄때는 지금까지 아래와 같은 방식으로 설정 해주었다.
 
 ```swift
-vc.delegate = self
+nextVC.delegate = self
 ```
 - segue를 통한 화면 전환 및 데이터 주입 방식은 비슷하지만 조금 다르다.
+- prepare(for: sender:) 메서드를 사용해 다음 VC 내 프로퍼티에 값 저장하기 하는것인데,
+- prepare(for: sender:) 메서드는 연결된 segue를 실행하기전 작동하는 메서드이다.
+- 즉, 다음 VC가 띄워지기전 다음 VC의 내용을 채워줄 수 있는 곳이라고 생각하면 된다.
 ```swift
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let settingViewController = segue.destination as? SettingViewController {
@@ -26,19 +29,15 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 }
 ```
-- prepare(for: sender:) 메서드를 사용해 다음 VC 내 프로퍼티에 값 저장하기 하는것인데,
-- prepare(for: sender:) 메서드는 연결된 segue를 실행하기전 작동하는 메서드이다.
-- 즉, 다음 VC가 띄워지기전 다음 VC의 내용을 채워줄 수 있는 곳이라고 생각하면 된다.
 
-
-## 🍎 설정한 값 유지하기
-- 앱에서 요구하는 기능은 간단히 아래와 같다.
-- 세팅 -> 전시 -> 세팅 (데이터가 한곳에서 관리 되는 것처럼 보여지게 하기)
-- 네비게이션 컨트롤러를 사용해 화면전환이 이루어지는 경우 스택에 쌓여있던 VC가 메모리에서 해제되고, 가지고 있던 값들은 사라진다.
+## 🍎 현재 가지고 있는 값들을 띄워질 컨트롤러에 전달하기
+- LED Screen 앱에서 요구하는 기능은 간단히 아래와 같다.
+- 세팅창에서 값(문자열 + 색상들) 세팅 -> 세팅이 완료되면 전시창에서 세팅된 값들 전시 -> segue와 네비게이션 푸시를 통한 새로운 세팅창 띄우고 세팅창에 전시되었던 값 넣기
+- **네비게이션 컨트롤러를 사용해 화면전환이 이루어지는 경우 스택에 쌓여있던 VC가 메모리에서 해제되고, 가지고 있던 값들은 사라지기 때문에 새로운 세팅창을 띄울때 값을 넣어줘 데이터가 한곳에서 관리 되는 것처럼 보여지게 해야한다..**
 - 이러한 경우를 위해, 현재 VC의 값을 다음 VC의 프로퍼티에 세팅 해주고 다음 VC를 로드하는 과정에서 다시 세팅을 해준다면 값이 유지되는 것처럼 보인다!
 - 다음 VC내 프로퍼티에 값을 넘겨주는 코드
 ```swift
-// DisplayViewController
+// DisplayViewController (전시 창)
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let settingViewController = segue.destination as? SettingViewController {
         settingViewController.delegate = self
@@ -50,7 +49,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 ```
 - 이전 VC에서 세팅된 값을 UI에 적용하는 코드
 ```swift
-// SettingViewController
+// SettingViewController (세팅 창)
 override func viewDidLoad() {
     super.viewDidLoad()
     configurePreviousSetting()
