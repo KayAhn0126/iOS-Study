@@ -27,7 +27,7 @@
 ## 🍎 UIResponder의 inputView 프로퍼티
 - responder는 UIEvent 객체를 처리도 할 수 있고 또, 사용자가 지정한 입력을 input view를 통해서 받을 수도 있다.
 - 앱의 스크린 속 UITextField 또는 UITextView 객체를 클릭하면 view는 first responder가 되고, 객체 자체의 input view인 가상 키보드를 전시한다.
-- 아래와 같이커스텀 input views를 만들고 다른 응답자가 활성화 될때 전시하는 방법도 있다.
+- 아래와 같이 커스텀 input views를 만들고 다른 응답자가 활성화 될때 전시하는 방법도 있다.
 ```swift
 // 예시 코드
 private func configureDatePicker() {
@@ -41,10 +41,9 @@ private func configureDatePicker() {
 - becomeFirstResponder() -> Bool
     - UIKit에게 객체를 first responder로 만들어 줄수 있는지 묻고 만약 가능하면 true를 반환하고 불가능하면 false를 반환한다.
 - resignFirstResponder() -> Bool
-    - resign은 사임하다라는 뜻이다.
+    - resign은 '사임하다'라는 뜻이다.
     - 즉, firstResponder에서 물러나겠다는 의미이다.
 
 ## 🍎 Citation
 - [UIResponder 공식 문서](https://developer.apple.com/documentation/uikit/uiresponder)
 - [UIResponder 클래스의 inputView 프로퍼티](https://developer.apple.com/documentation/uikit/uiresponder/1621092-inputview)
-
