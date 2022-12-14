@@ -8,9 +8,9 @@
 import Foundation
 
 enum AppleProductEnum {
-    case iPhone(iPhoneModel, Storage, Color)
+    // case iPhone(iPhoneModel, Storage, Color)
     case iPhone(model: iPhoneModel, storage: Storage, color: Color)
-    case iPad
+    case iPad(iPadModel, Storage, Color)
 }
 
 

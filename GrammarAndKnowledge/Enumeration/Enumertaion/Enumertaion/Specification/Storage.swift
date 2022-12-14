@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Storage: String {
+enum Storage {
     case sixteen
     case thirty_two
     case sixty_four

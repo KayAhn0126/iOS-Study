@@ -13,6 +13,10 @@
 		6A4114DB29488F71001EF788 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4114D929488F71001EF788 /* Main.storyboard */; };
 		6A4114DD29488F72001EF788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4114DC29488F72001EF788 /* Assets.xcassets */; };
 		6A4114E029488F72001EF788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4114DE29488F72001EF788 /* LaunchScreen.storyboard */; };
+		6A4114E829488FF0001EF788 /* AppleProductEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4114E729488FF0001EF788 /* AppleProductEnum.swift */; };
+		6A4114EA2948905C001EF788 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4114E92948905C001EF788 /* Storage.swift */; };
+		6A4114EC2948906C001EF788 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4114EB2948906C001EF788 /* Model.swift */; };
+		6A4114EE29489078001EF788 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4114ED29489078001EF788 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		6A4114DC29488F72001EF788 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A4114DF29488F72001EF788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A4114E129488F72001EF788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A4114E729488FF0001EF788 /* AppleProductEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleProductEnum.swift; sourceTree = "<group>"; };
+		6A4114E92948905C001EF788 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		6A4114EB2948906C001EF788 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6A4114ED29489078001EF788 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,8 @@
 		6A4114D229488F71001EF788 /* Enumertaion */ = {
 			isa = PBXGroup;
 			children = (
+				6A4114F029489EBB001EF788 /* Enum */,
+				6A4114EF29489EA0001EF788 /* Specification */,
 				6A4114D329488F71001EF788 /* AppDelegate.swift */,
 				6A4114D529488F71001EF788 /* SceneDelegate.swift */,
 				6A4114D729488F71001EF788 /* ViewController.swift */,
@@ -65,6 +75,24 @@
 				6A4114E129488F72001EF788 /* Info.plist */,
 			);
 			path = Enumertaion;
+			sourceTree = "<group>";
+		};
+		6A4114EF29489EA0001EF788 /* Specification */ = {
+			isa = PBXGroup;
+			children = (
+				6A4114EB2948906C001EF788 /* Model.swift */,
+				6A4114E92948905C001EF788 /* Storage.swift */,
+				6A4114ED29489078001EF788 /* Color.swift */,
+			);
+			path = Specification;
+			sourceTree = "<group>";
+		};
+		6A4114F029489EBB001EF788 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				6A4114E729488FF0001EF788 /* AppleProductEnum.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A4114D829488F71001EF788 /* ViewController.swift in Sources */,
+				6A4114E829488FF0001EF788 /* AppleProductEnum.swift in Sources */,
+				6A4114EE29489078001EF788 /* Color.swift in Sources */,
 				6A4114D429488F71001EF788 /* AppDelegate.swift in Sources */,
+				6A4114EC2948906C001EF788 /* Model.swift in Sources */,
 				6A4114D629488F71001EF788 /* SceneDelegate.swift in Sources */,
+				6A4114EA2948905C001EF788 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
