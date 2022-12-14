@@ -232,5 +232,16 @@ class ViewController: UIViewController {
     }
 }
 ```
+
+## 🍎 if case let으로 보일러 플레이트 코드 제거하기
+- 보일러 플레이트 코드는 변화없이 여러 군데에서 반복되는 코드를 말한다.
+- 새로운 xcode 프로젝트를 열고 if case let을 사용하는 코드 작성.
+- 떡볶이의 비율을 알려주는 코드를 기존 방식으로 처리하는 코드와 if case let으로 처리하는 코드 구현
+- [구현부](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/Enumeration/enumWithIfCaseLet/enumWithIfCaseLet/bunsikEnum.swift)
+- [실행부](https://github.com/KayAhn0126/iOS-Study/blob/main/GrammarAndKnowledge/Enumeration/enumWithIfCaseLet/enumWithIfCaseLet/ViewController.swift)
+- 연관값을 사용하지 않으면 굳이 let 상수를 선언하고 사용할 필요는 없다.
+    - 이 경우 if case 로 작성.
+
 ## 🍎 Citation
 - [소들이 블로그](https://babbab2.tistory.com/116)
+- [우짱 블로그](https://woozzang.tistory.com/177)
