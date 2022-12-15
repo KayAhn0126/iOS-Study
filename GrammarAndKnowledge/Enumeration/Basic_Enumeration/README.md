@@ -1,4 +1,4 @@
-# Enumeration
+# Basic_Enumeration
 
 ## 🍎 열거형 기본
 - 열거형은 대문자, 케이스는 소문자로 시작!
