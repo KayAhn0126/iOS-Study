@@ -1,10 +1,5 @@
 # iOS-Study
 
-# Make it mine
-- [extension을 이용해 attribute 세팅하기 >> NSAttribute-1](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UILabel/SettingAttributesOfLableThroughExtensions)
-- [Applying a new attribute to the label >> NSAttribute-2](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UILabel/ApplyingAttributeToLabel)
-- [Applying a new attribute to the UIButton >> NSAttribute-3](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIButton/ApplyingAttributeToButton)
-
 # UI
 | 제목 | 설명 |
 | :-: | :-: |
@@ -49,6 +44,7 @@
 | [Error Handling](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/ErrorHandling) | Error Handling 정리 & TBU |
 | [Self vs self](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Self_vs_self) | Self와 self에 대한 정리 |
 | [Regular Expression](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/RegularExpression) | 정규식 정리 |
+| [Enumeration](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Enumeration) | 열거형 정리|
 
 # Network
 | 제목 | 설명 |
