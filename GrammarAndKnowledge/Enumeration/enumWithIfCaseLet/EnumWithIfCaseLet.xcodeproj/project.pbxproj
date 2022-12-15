@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A6A43012949C19F00A87574 /* enumWithIfCaseLet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = enumWithIfCaseLet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6A43012949C19F00A87574 /* EnumWithIfCaseLet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnumWithIfCaseLet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6A43042949C19F00A87574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A6A43062949C19F00A87574 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6A6A43082949C19F00A87574 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		6A6A42F82949C19F00A87574 = {
 			isa = PBXGroup;
 			children = (
-				6A6A43032949C19F00A87574 /* enumWithIfCaseLet */,
+				6A6A43032949C19F00A87574 /* EnumWithIfCaseLet */,
 				6A6A43022949C19F00A87574 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		6A6A43022949C19F00A87574 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A6A43012949C19F00A87574 /* enumWithIfCaseLet.app */,
+				6A6A43012949C19F00A87574 /* EnumWithIfCaseLet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6A6A43032949C19F00A87574 /* enumWithIfCaseLet */ = {
+		6A6A43032949C19F00A87574 /* EnumWithIfCaseLet */ = {
 			isa = PBXGroup;
 			children = (
 				6A6A43042949C19F00A87574 /* AppDelegate.swift */,
@@ -67,15 +67,15 @@
 				6A6A43122949C1A000A87574 /* Info.plist */,
 				6A6A43182949C1D300A87574 /* bunsikEnum.swift */,
 			);
-			path = enumWithIfCaseLet;
+			path = EnumWithIfCaseLet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6A6A43002949C19F00A87574 /* enumWithIfCaseLet */ = {
+		6A6A43002949C19F00A87574 /* EnumWithIfCaseLet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A6A43152949C1A000A87574 /* Build configuration list for PBXNativeTarget "enumWithIfCaseLet" */;
+			buildConfigurationList = 6A6A43152949C1A000A87574 /* Build configuration list for PBXNativeTarget "EnumWithIfCaseLet" */;
 			buildPhases = (
 				6A6A42FD2949C19F00A87574 /* Sources */,
 				6A6A42FE2949C19F00A87574 /* Frameworks */,
@@ -85,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = enumWithIfCaseLet;
+			name = EnumWithIfCaseLet;
 			productName = enumWithIfCaseLet;
-			productReference = 6A6A43012949C19F00A87574 /* enumWithIfCaseLet.app */;
+			productReference = 6A6A43012949C19F00A87574 /* EnumWithIfCaseLet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6A6A42FC2949C19F00A87574 /* Build configuration list for PBXProject "enumWithIfCaseLet" */;
+			buildConfigurationList = 6A6A42FC2949C19F00A87574 /* Build configuration list for PBXProject "EnumWithIfCaseLet" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6A6A43002949C19F00A87574 /* enumWithIfCaseLet */,
+				6A6A43002949C19F00A87574 /* EnumWithIfCaseLet */,
 			);
 		};
 /* End PBXProject section */
@@ -292,7 +292,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = enumWithIfCaseLet/Info.plist;
+				INFOPLIST_FILE = EnumWithIfCaseLet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -303,7 +303,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.enumWithIfCaseLet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EnumWithIfCaseLet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -319,7 +319,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = enumWithIfCaseLet/Info.plist;
+				INFOPLIST_FILE = EnumWithIfCaseLet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -330,7 +330,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.enumWithIfCaseLet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EnumWithIfCaseLet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -341,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6A6A42FC2949C19F00A87574 /* Build configuration list for PBXProject "enumWithIfCaseLet" */ = {
+		6A6A42FC2949C19F00A87574 /* Build configuration list for PBXProject "EnumWithIfCaseLet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A6A43132949C1A000A87574 /* Debug */,
@@ -350,7 +350,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A6A43152949C1A000A87574 /* Build configuration list for PBXNativeTarget "enumWithIfCaseLet" */ = {
+		6A6A43152949C1A000A87574 /* Build configuration list for PBXNativeTarget "EnumWithIfCaseLet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A6A43162949C1A000A87574 /* Debug */,
