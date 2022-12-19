@@ -44,7 +44,9 @@
 | [Error Handling](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/ErrorHandling) | Error Handling 정리 & TBU |
 | [Self vs self](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Self_vs_self) | Self와 self에 대한 정리 |
 | [Regular Expression](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/RegularExpression) | 정규식 정리 |
-| [Enumeration](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Enumeration) | 열거형 정리|
+| [Enumeration](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Enumeration) | 열거형 정리 |
+| [Framework](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Framework) | 프레임워크 정리 |
+| [Required Init](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/RequiredInit) | 필수생성자 정리 |
 
 # Network
 | 제목 | 설명 |
