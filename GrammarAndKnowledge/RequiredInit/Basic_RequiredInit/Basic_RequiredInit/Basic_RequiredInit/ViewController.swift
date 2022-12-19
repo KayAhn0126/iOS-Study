@@ -11,9 +11,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        var x = Student(name: "Kay")
+        print(x.grade)
+        print(x.name)
     }
-
-
 }
-
