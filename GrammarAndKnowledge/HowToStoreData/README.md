@@ -98,6 +98,8 @@ class MainViewController: UIViewController {
 
 
 ## 🍎 UserDefaults 객체를 사용해 값 저장하기
+- 런타임 환경에서 동작하는 객체
+- 싱글턴 (동시성 문제를 블로킹 알고리즘으로 방지해 Thread safe)
 - 내부적으로 plist 파일을 이용해 값을 저장하는 UserDefaults 객체
     - 본래 NSData, NSString, NSNumber, NSDate, NSArray, NSDictionary 타입의 값만 저장할 수 있었다.
     - 즉, 다른 클래스 타입의 객체를 저장하려면 직렬화 과정을 거쳐야 했다.
