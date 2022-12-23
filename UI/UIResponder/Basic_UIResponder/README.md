@@ -1,11 +1,12 @@
 # UIResponder 기본 개념
 
 ## 🍎 정의
-- 이벤트에 응답하고 처리하는 추상적 인터페이스
 - UIKit앱 이벤트 처리의 중추 역할을 한다.
-- UIResponder 클래스를 통해 생성된 인스턴스 말고도 UIApplication, UIViewController, UIView(UIWindow 포함)의 인스턴스 또한 responder라고 할 수 있다.
-    - 방금 나열한 클래스들은 UIResponder의 서브 클래스
+- 이벤트에 응답하고 처리하는 추상적 인터페이스
+- UIResponder 클래스를 통해 생성된 인스턴스 말고도 **UIApplication, UIViewController, UIView(UIWindow 포함)의 인스턴스 또한 responder**라고 할 수 있다.
+    - 방금 나열한 클래스들은 UIResponder의 **서브 클래스**
 - 이벤트가 발생하면, UIKit이 발생한 이벤트들을 앱의 responder 객체에 전달한다.
+    - [As events occur, UIKit dispatches them to your app’s responder objects for handling.](https://developer.apple.com/documentation/uikit/uiresponder)
 
 ## 🍎 responder 객체가 전달받는 이벤트
 - **이벤트의 종류를 알아보자**
@@ -20,9 +21,8 @@
      - [touchesEnded(_:with:)](https://developer.apple.com/documentation/uikit/uiresponder/1621084-touchesended)
      - [touchesCancelled(_:with:)](https://developer.apple.com/documentation/uikit/uiresponder/1621116-touchescancelled)
 - 터치 이벤트 같은 경우, responder는 UIKit이 제공하는 이벤트 정보를 사용해 **변경 사항을 추적하고 그에 따라 적절하게 앱의 인터페이스를 업데이트 한다.**
-- UIKit의 응답자는 처리되지 않은 이벤트들을 앱의 다른 곳으로 전달하는것도 관리한다.
-- 만약 응답자가 이벤트를 처리하지 않으면 responder chain에 의해서 "현재 처리 해야하는 이벤트"에서 "다음에 처리해야 하는 이벤트"로 미룬다.
-- UIKit은 responder. chain을 동적으로 관리한다. 미리 정해져있는 규칙에 따라 어떤 객체가 다음 이벤트를 받을지 정해져있다. 예를 들어, 뷰는 이벤트를 상위 뷰로 전달하고 루트 뷰는 이벤트를 뷰 컨트롤러로 전달한다.
+- UIKit의 응답자는 처리되지 않은 이벤트들을 앱의 다른 곳으로 전달하는것도 관리한다 (**보통은 현재 responder가 이벤트를 처리 할 수 없는 경우라면 superview로 전달**).
+- UIKit은 responder chain을 동적으로 관리한다. 미리 정해져있는 규칙에 따라 어떤 객체가 다음 이벤트를 받을지 정해져있다. 예를 들어, 뷰는 이벤트를 상위 뷰로 전달하고 루트 뷰는 이벤트를 뷰 컨트롤러로 전달한다.
 
 ## 🍎 UIResponder의 inputView 프로퍼티
 - responder는 UIEvent 객체를 처리도 할 수 있고 또, 사용자가 지정한 입력을 input view를 통해서 받을 수도 있다.
