@@ -24,6 +24,7 @@
 # Grammar & knowledge
 | 제목 | 설명 |
 | :-: | :-: |
+| [AppDelegate SceneDelegate](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/AppDelegateAndSceneDelegate) | AppDelegate와 SceneDelegate에 대한 설명 |
 | [AppDelegate / UserDefaults](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/HowToStoreData) | AppDelegate와 UserDefaults를 사용한 데이터 저장 및 전달 방법 정리 
 | [Handling Objects in UserDefaults](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/HandlingObjectInUserDefaults)| 프로퍼티 객체 타입이 아닌 구조체 인스턴스를 userDefaults에 저장하고 불러오는 방법 및 시행착오 정리 |
 | [Associated Type](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/AssociatedType) | associatedtype 정리 |
