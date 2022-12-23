@@ -101,7 +101,7 @@ class BlueViewController: UIViewController {
 ## 🍎 Delegate 이용 (VC간 결합도 낮음 + Retain Cycle 예방)
 - 먼저 결합도를 낮추기 위해 프로토콜 생성
 ```swift
-protocol SendDataDelegate: AnyObject {
+protocol ReceiveDataDelegate: AnyObject {
     func receiveData(response : String) -> Void
 }
 ```
@@ -109,7 +109,7 @@ protocol SendDataDelegate: AnyObject {
 - 이후 BlueVC로 이동 전 BlueVC의 SendDataDelegate프로퍼티를 자신(GreenVC)로 지정.
 - **GreenVC**
 ```swift
-class GreenViewController: UIViewController, SendDataDelegate {
+class GreenViewController: UIViewController, ReceiveDataDelegate {
 
     @IBOutlet weak var sendButton: UIButton!
     
@@ -117,11 +117,11 @@ class GreenViewController: UIViewController, SendDataDelegate {
         super.viewDidLoad()
     }
     
-    @IBAction func sendData(_ sender: Any) {
-        guard let vc = self.storyboard?.instantiateViewController(identifier: "BlueViewController") as? BlueViewController else { return }
+    @IBAction func popBlueVC(_ sender: Any) {
+        guard let blueVC = self.storyboard?.instantiateViewController(identifier: "BlueViewController") as? BlueViewController else { return }
         
-        vc.dataDelegate = self
-        self.navigationController?.pushViewController(vc, animated: true)
+        blueVC.workDelegate = self
+        self.navigationController?.pushViewController(blueVC, animated: true)
     }
 
     func receiveData(response: String) {
@@ -133,18 +133,18 @@ class GreenViewController: UIViewController, SendDataDelegate {
 ```swift
 import UIKit
 
-class BlueViewController: UIViewController, SendDataDelegate {
+class BlueViewController: UIViewController {
     
     @IBOutlet weak var dataLabel: UILabel!
     var data : String = ""
-    weak var dataDelegate : SendDataDelegate?
+    weak var workDelegate : ReceiveDataDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.dataLabel.text = data
         
-        dataDelegate?.receiveData(response: "delegate works well~")
+        workDelegate?.receiveData(response: "delegate works well~")
         self.navigationController?.popViewController(animated: true)
     }
 }
@@ -166,15 +166,14 @@ class GreenViewController: UIViewController {
     }
     
     @IBAction func sendData(_ sender: Any) {
-        guard let vc = self.storyboard?.instantiateViewController(identifier: "BlueViewController") as? BlueViewController else { return }
+        guard let blueVC = self.storyboard?.instantiateViewController(identifier: "BlueViewController") as? BlueViewController else { return }
         
-        vc.completioHandler = {
-            msg in
-            messageFromBlueVC = msg
-            print(messageFromBlueVC)
+        blueVC.completioHandler = { [unowned self] msg in
+            self.messageFromBlueVC = msg
+            print(self.messageFromBlueVC)
         }
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(blueVC, animated: true)
     }
 
 }
@@ -218,10 +217,10 @@ class GreenViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(printMessage), name: Notification.Name(rawValue: "SendMessage"), object: nil)
     }
     
-    @IBAction func sendData(_ sender: Any) {
-        guard let vc = self.storyboard?.instantiateViewController(identifier: "BlueViewController") as? BlueViewController else { return }
+    @IBAction func popBlueVC(_ sender: Any) {
+        guard let blueVC = self.storyboard?.instantiateViewController(identifier: "BlueViewController") as? BlueViewController else { return }
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(blueVC, animated: true)
     }
     
     @objc func printMessage(_ notification : Notification) {
