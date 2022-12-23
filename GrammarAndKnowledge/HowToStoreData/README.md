@@ -4,20 +4,19 @@
 - 아래 내용에서는 AppDelegate 객체, UserDefaults 객체라고 표현하는데 사실 이는 각각 AppDelegate 클래스의 객체, UserDefaults 클래스의 객체라고 표현 하는것이 맞다. 하지만 AppDelegate, UserDefaults 두 클래스 모두 고유의 인스턴스는 하나씩 가지고 있기 때문에 아래에서는 '클래스 + 객체'로 사용했다.
 
 ## 🍎 생명주기로 알아보는 저장소들
-- AppDelegate 객체 -> 앱이 종료되면 저장 정보도 휘발
-- UserDefaults 객체 -> 앱이 삭제될 때 까지 저장 가능
+- AppDelegate 클래스의 객체 -> 앱이 종료되면 저장 정보도 휘발
+- UserDefaults 클래스의 객체 -> 앱이 삭제될 때 까지 저장 가능
     - 보통 간단한 데이터를 저장하는 용도로 사용.
     - 코코아 터치 프레임워크에서 제공
-- Core Data 객체 -> 앱이 삭제될 때 까지 저장 가능
+- Core Data 프레임워크 -> 앱이 삭제될 때 까지 저장 가능
     - 보통 소규모 데이터베이스 처럼 다소 복잡한 형태의 데이터를 저장하는데 사용
     - 코코아 터치 프레임워크에서 제공
 
 ## 🍎 AppDelegate 객체를 사용해 값 주고 받기
-
-### 천천히 알아보기
-- 가장 쉽게 사용할 수 있는 객체로 AppDelegate.swift 파일에 정의된 AppDelegate 클래스.
+- 가장 쉽게 사용할 수 있는 객체로 AppDelegate.swift 파일에 정의된 AppDelegate 클래스의 app delegate.
+    - app delegate는 AppDelegate 클래스의 객체이다! (대소문자 + 띄어쓰기 주의!)
 - 엄밀히 말하면 저장소의 역할이 아니다. 
-    - 원래의 목적은 UIApplication 객체로부터 생명 주기 관리를 위임 받아 커스텀 코드를 처리하는 역할.
+    - [원래 AppDelegate의 역할](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/AppDelegateAndSceneDelegate)
 - 임시 저장소처럼 사용할 수 있는 이유
     - 이 객체는 앱 전체를 통틀어 단 하나만 존재.
     - 모든 뷰 컨트롤러에서 접근 가능.
@@ -104,7 +103,6 @@ class MainViewController: UIViewController {
     - 본래 NSData, NSString, NSNumber, NSDate, NSArray, NSDictionary 타입의 값만 저장할 수 있었다.
     - 즉, 다른 클래스 타입의 객체를 저장하려면 직렬화 과정을 거쳐야 했다.
     - 하지만 스위프트 언어가 코코아 터치 프레임워크에 반영되면서 스위프트에서 제공하는 기본 자료형까지 UserDefaults 객체에서 그대로 저장할 수 있게 됨.
-
 - UserDefaults에 저장하는 코드
     - 일반, 객체, 배열의 저장 방식을 알아보자
 ```swift
@@ -186,3 +184,4 @@ static var movieGenres: [Genre] {
 }
 ```
 - computed property 내용은 이 [블로그](https://kyungmosung.github.io/2020/08/17/swift-userdefaults-customobject/)를 참고.
+- [AppDelegate SceneDelegate 사진 출처](https://velog.io/@dev-lena/iOS-AppDelegate%EC%99%80-SceneDelegate)
