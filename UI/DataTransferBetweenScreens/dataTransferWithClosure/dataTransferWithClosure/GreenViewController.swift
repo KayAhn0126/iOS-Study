@@ -10,10 +10,11 @@ import UIKit
 class GreenViewController: UIViewController {
     
     @IBOutlet weak var sendButton: UIButton!
+    
     var messageFromBlueVC: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     
