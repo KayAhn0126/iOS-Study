@@ -220,11 +220,10 @@ func caseSensitive(_ text: String) -> Bool {
 - case3는 case1과 같다!
 
 ### 📖 20. \s, \S 사용법
+![](https://i.imgur.com/jQy0v2t.png)
 - \s -> all whitespace chars.
     - ex) space, new line and tab
 - \S -> any non-whitespace chars.
-![](https://i.imgur.com/jQy0v2t.png)
-
 
 ### 📖 21. \d 사용법 -> [0-9]
 ![](https://i.imgur.com/rGp67Rw.png)
