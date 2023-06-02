@@ -1,4 +1,4 @@
-# 프로젝트 중 경험 정리
+# iOS / 프로젝트 정리
 
 # UI
 | 제목 | 설명 |
@@ -48,6 +48,7 @@
 | [Enumeration](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Enumeration) | 열거형 정리 |
 | [Framework](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Framework) | 프레임워크 정리 |
 | [Required Init](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/RequiredInit) | 필수생성자 정리 |
+| [DispatchQueue](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/DispatchQueue) | DispatchQueue 정리 |
 
 # Network
 | 제목 | 설명 |
@@ -109,3 +110,5 @@
 | 제목 | 설명 |
 | :-: | :-: |
 | [CocoaPods / Alamofire 설치 정리](https://github.com/KayAhn0126/iOS-Study/tree/main/Etc/HowToInstallCocoapods) | CocoaPods / Alamofire 설치 순서 및 오류 정리 |
+
+[![Everything Is AWESOME](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
