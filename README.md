@@ -110,5 +110,3 @@
 | 제목 | 설명 |
 | :-: | :-: |
 | [CocoaPods / Alamofire 설치 정리](https://github.com/KayAhn0126/iOS-Study/tree/main/Etc/HowToInstallCocoapods) | CocoaPods / Alamofire 설치 순서 및 오류 정리 |
-
-[![Everything Is AWESOME](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
