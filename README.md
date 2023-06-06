@@ -49,6 +49,9 @@
 | [Framework](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/Framework) | 프레임워크 정리 |
 | [Required Init](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/RequiredInit) | 필수생성자 정리 |
 | [DispatchQueue](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/DispatchQueue) | DispatchQueue 정리 |
+| [Passing reference as parameter](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/PassingReference) | 참조를 통한 인자 전달 방식 |
+| [CustomStringConvertible Protocol](https://github.com/KayAhn0126/iOS-Study/tree/main/GrammarAndKnowledge/CustomStringConvertibleProtocol) | CustomStringConvertible Protocol 개념 정리 |
+
 
 # Network
 | 제목 | 설명 |
