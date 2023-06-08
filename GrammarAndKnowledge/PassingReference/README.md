@@ -15,8 +15,22 @@
     - 즉, 함수의 매개 변수를 참조 타입으로 선언하고, **매개 변수가 호출하는 쪽의 실제 인자를 참조하여 실인자와 공간(메모리)를 공유하는 인자 전달 방식**이다.
 
 ## 🍎 객체의 메모리 주소는 어떻게 얻을까?
-- [포인터 파라미터를 가지는 함수 호출](https://developer.apple.com/documentation/swift/calling-functions-with-pointer-parameters) 아티클을 보자.
-### 📖 현 시점에서 필요한것은 UnsafePointer이지만 UnsafeRawPointer에 대해서도 같이 알아보자
+- [Documentation/Swift/Swift Standard Library/C Interoperability](https://developer.apple.com/documentation/swift/c-interoperability)
+- 일반적으로는 아래와 같이 간단하게 Swift Standard Library에서 제공하는 함수 중 withUnsafePointer 함수로 접근할 수 있다.
+    - 이것도 나중에 다루지만 withUnsafePointer는 타입이 정해져 있는 변수의 주소를 가져온다.
+- withUnsafePointer는 우리가 사용하기 쉽게 스위프트에서 제공하는 함수다.
+    - 초록색 사각형은 우리가 자주 사용하는 print 함수가 분류되어 있는 곳.
+    - 빨간색 사각형에 방금 설명한 withUnsafePointer가 있다.
+![](https://hackmd.io/_uploads/r1SJvI1wn.png)
+- 좀 더 자세히 알아보기 위해 withUnsafePointer의 매개변수 타입을 알아보자!
+- [Documentation/Swift/Swift Standard Library/Manual Memory Management/Calling Functions With Pointer Parameters](https://developer.apple.com/documentation/swift/calling-functions-with-pointer-parameters) 아티클을 보자.
+- UnsafePointer
+- UnsafeRawPointer
+- UnsafeMutablePointer
+- UnsafeMytableRawPointer
+- **위의 네가지 타입에 대해서 알아보자!**
+
+### 📖 UnsafePointer와 UnsafeRawPointer의 공통점과 차이점
 - 공통점
     - UnsafePointer와 UnsafeRawPointer 모두 raw untyped memory를 사용하기 위한 unsafe pointer API이다.
     - low-level C나 system API과 상호작용할 때 사용한다.
