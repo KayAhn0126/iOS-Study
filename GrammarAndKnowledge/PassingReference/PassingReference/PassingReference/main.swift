@@ -48,3 +48,7 @@ takesARawPointer("How are you today?")
 
 // MARK: - inout 키워드를 사용해서 객체를 참조하는 방식으로 인자를 전달하면 실제로 해당 인자를 참조할까?
 
+var test = 10
+withUnsafePointer(to: &test) { x in
+    print(x)
+}
