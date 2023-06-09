@@ -12,7 +12,6 @@ import Foundation
 // UnsafePointer<Type> 타입을 인자로 넘겨줘야 하는 함수
 // 이때 넘겨주는 인자는 변수이건, 배열이건 타입만 맞으면 된다.
 func takesAPointer(_ p: UnsafePointer<Float>) {
-    var x = p
     print(p)
     print(p.pointee)
 }
@@ -32,15 +31,16 @@ takesAPointer(&yArr)
 */
 
 
-func takesARawPointer(_ p: UnsafeRawPointer?)  {
+func takesARawPointer(_ p: UnsafeRawPointer)  {
     print(p)
-    
+    print(p.load(as: Float.self))
 }
 
-var xx: Float = 0.0, yy: Int = 0
-takesARawPointer(&xx)
-takesARawPointer(&yy)
+var testFloat: Float = 3.5, testInt: Int = 5
+takesARawPointer(&testFloat)
+takesARawPointer(&testInt)
 takesARawPointer([1.0, 2.0, 3.0] as [Float])
+
 var intArray = [1, 2, 3]
 takesARawPointer(intArray)
 takesARawPointer("How are you today?")
