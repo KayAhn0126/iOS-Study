@@ -47,7 +47,11 @@
 - safety level을 이미지로 보면 아래와 같다.
 ![](https://hackmd.io/_uploads/HkDRRrgP3.png)
 - 아래로 내려갈 수록 받는 타입의 범용성이 커져 이런 저런 타입을 사용할 수 있지만, 내려갈 수록 물리적인 Hardware에 가까워져 CPU를 더 많이 사용한다.
-- 
+
+### 📖 깔끔하게 정리된 표로 알아보자!
+- Kodeco에 이렇게 깔끔하게 정리된표가 있었는데 너무 늦게 알아버렸다.
+![](https://hackmd.io/_uploads/Hku9yI7Ph.png)
+- [이미지 출처](https://www.kodeco.com/7181017-unsafe-swift-using-pointers-and-interacting-with-c)
 
 ### 📖 타입이 정해져 있는 포인터를 매개변수로 받는 함수
 ```swift
