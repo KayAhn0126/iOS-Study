@@ -55,7 +55,7 @@ takesARawPointer(intArray)
 takesARawPointer("How are you today?")
 
 
-// UnsafeMutablePointer 타입을 사용하면 특정 타입 + 포인터가 가르키고 있는 값을 변경할 수 있다! -> 아래의 예시를 보자.
+//MARK: UnsafeMutablePointer 타입을 사용하면 특정 타입 + 포인터가 가르키고 있는 값을 변경할 수 있다! -> 아래의 예시를 보자.
 func takesAMutablePointer(_ p: UnsafeMutablePointer<Int>) {
     print(p, p.pointee)
     p.pointee = 1000
@@ -64,21 +64,41 @@ func takesAMutablePointer(_ p: UnsafeMutablePointer<Int>) {
 var testNum1 = 10
 takesAMutablePointer(&testNum1)
 
-// 그럼.. 모든 포인터 타입을 다 받을수 있으면서 값까지 변경가능한 타입은..?
-// UnsafeMutableRawPointer !!!
 
-// MARK: 여기서 부터 다시 정리하기!!
+//MARK: 그럼.. 모든 포인터 타입을 다 받을수 있으면서 값까지 변경가능한 타입은..?
+// UnsafeMutableRawPointer !!!
 func takesAMutableRawPointer(_ p: UnsafeMutableRawPointer) {
     print(p, p.load(as: Int.self))
-    p.storeBytes(of: 0x00000000, as: Int.self)
+    //UnsafeMutableRawPointer와 관련된 func이 많지만 현재는 값이 바뀔수 있다 정도만 파악하고 넘어가자!
+    p.storeBytes(of: 100, as: Int.self)
     print(p, p.load(as: Int.self))
 }
-print("")
 var testNum2 = 10
 takesAMutableRawPointer(&testNum2)
 
 
-
 // MARK: - inout 키워드를 사용해서 객체를 참조하는 방식으로 인자를 전달하면 실제로 해당 인자를 참조할까?
+print("=======================================================")
+var finalNum = 500
+
+func testInout(_ num: inout Int) {
+    // 매개변수로 들어온 포인터를 통해 주소 알아보기
+    withUnsafePointer(to: &num) { address in
+        print(address)
+    }
+    
+    // 값을 바꿔보자!
+    num = 100
+}
+
+testInout(&finalNum)
+
+// finalNum의 주소 확인 해보기
+withUnsafePointer(to: &finalNum) { finalNumAddress in
+    print(finalNumAddress)
+}
+
+// testInout에서 값을 변경했는데, 제대로 적용되었는지 확인해보자!
+print(finalNum)
 
 
