@@ -67,15 +67,15 @@ takesAMutablePointer(&testNum1)
 
 //MARK: 그럼.. 모든 포인터 타입을 다 받을수 있으면서 값까지 변경가능한 타입은..?
 // UnsafeMutableRawPointer !!!
-func takesAMutableRawPointer(_ p: UnsafeMutableRawPointer) {
-    print(p, p.load(as: Int.self))
+func takesAMutableRawPointer<T>(_ p: UnsafeMutableRawPointer, _ type: T.Type) {
+    print(p, p.load(as: T.self))
     //UnsafeMutableRawPointer와 관련된 func이 많지만 현재는 값이 바뀔수 있다 정도만 파악하고 넘어가자!
-    p.storeBytes(of: 100, as: Int.self)
-    print(p, p.load(as: Int.self))
+    p.storeBytes(of: 100 as! T, as: T.self)
+    print(p, p.load(as: T.self))
 }
 var testNum2 = 10
-takesAMutableRawPointer(&testNum2)
-
+takesAMutableRawPointer(&testNum2, Int.self)
+print(testNum2) // 100로 값이 변경되었다!
 
 // MARK: - inout 키워드를 사용해서 객체를 참조하는 방식으로 인자를 전달하면 실제로 해당 인자를 참조할까?
 print("=======================================================")
