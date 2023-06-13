@@ -47,6 +47,7 @@
 - safety level을 이미지로 보면 아래와 같다.
 ![](https://hackmd.io/_uploads/HkDRRrgP3.png)
 - 아래로 내려갈 수록 받는 타입의 범용성이 커져 이런 저런 타입을 사용할 수 있지만, 내려갈 수록 물리적인 Hardware에 가까워져 CPU를 더 많이 사용한다.
+- 위로 올라 갈수록 메모리, 아래로 내려갈수록 CPU 사용 증가.
 
 ### 📖 깔끔하게 정리된 표로 알아보자!
 - Kodeco에 이렇게 깔끔하게 정리된표가 있었는데 너무 늦게 알아버렸다.
@@ -121,3 +122,39 @@ takesARawPointer("How are you today?")
 2.0958534e-19
 0x0000000100008068
 ```
+- 받을때는 아무 타입으로 받을수 있지만, 사용할 때는 사용하고자 하는 타입으로 변환을 꼭 해주어야 한다.
+- 위에 7e-45, 1e-45, 2.0958534e-19와 같은 값들은 잘못된 메모리 주소에 접근 했을때 쓰레기값이 출력되는 것.
+
+### 📖 타입이 정해져 있고 값 변경이 가능한 포인터를 매개변수로 받기
+```swift
+func takesAMutablePointer(_ p: UnsafeMutablePointer<Int>) {
+    print(p, p.pointee)
+    p.pointee = 1000
+    print(p, p.pointee)
+}
+
+var testNum1 = 10
+takesAMutablePointer(&testNum1)
+```
+- 설명이 따로 필요 없다. 포인터를 통해서 값을 변경할 수 있는 UnsafeMutablePointer\<T>
+- 하지만 타입은 지정 해주어야 한다.
+
+### 📖 모든 타입을 받을 수 있고 값 변경이 가능한 포인터를 매개변수로 받기
+```swift
+func takesAMutableRawPointer(_ p: UnsafeMutableRawPointer) {
+    print(p, p.load(as: Int.self))
+    //UnsafeMutableRawPointer와 관련된 func이 많지만 현재는 값이 바뀔수 있다 정도만 파악하고 넘어가자!
+    p.storeBytes(of: 100, as: Int.self)
+    print(p, p.load(as: Int.self))
+}
+
+var testNum2 = 10
+takesAMutableRawPointer(&testNum2)
+print(testNum2) // 100로 값이 변경되었다!
+```
+- 타입 상관없이 값을 변경할 수 있는 포인터가 UnsafeMutableRawPointer
+- 타입을 정해줄 필요도 없고 값도 변경 가능하다.
+- safe level 이미지에서 가장 아래에 있는 level이다.
+
+## 🍎 참고 자료
+- [Swift 메모리 구조](https://stevenpcurtis.medium.com/memorylayout-in-swift-c4e70bb32e3f)
