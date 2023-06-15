@@ -15,3 +15,95 @@
  */
 
 import Foundation
+
+protocol Telephone {
+    var phoneNo: String { get set }
+    func call()
+    func hangup()
+}
+
+extension Telephone {
+    func call() {
+        // call
+    }
+    
+    func hangup() {
+        // hangup
+    }
+}
+
+protocol Landline: Telephone {
+    
+}
+
+protocol Cellular: Telephone {
+    func sendSMS()
+}
+
+protocol Rotaryable {
+    func rotaryInput()
+}
+
+protocol PushButtonable {
+    func buttonInput()
+}
+
+protocol Touchable {
+    func touchInput()
+}
+
+class RotaryPhone: Landline, Rotaryable {
+    func rotaryInput() {
+        // rotaryInput implementation goes here
+    }
+    
+    var phoneNo: String
+    
+    init(_ number: String) {
+        self.phoneNo = number
+    }
+}
+
+class PushButtonPhone: Landline, PushButtonable {
+    func buttonInput() {
+        // buttonInput implementation goes here
+    }
+    
+    var phoneNo: String
+    
+    init(_ number: String) {
+        self.phoneNo = number
+    }
+}
+
+class NonSmartPhone: Cellular, PushButtonable {
+    func sendSMS() {
+        // from Cellular protocol
+    }
+    
+    func buttonInput() {
+        // from PushButtonable protocol
+    }
+    
+    var phoneNo: String
+    
+    init(_ number: String) {
+        self.phoneNo = number
+    }
+}
+
+class SmartPhone: Cellular, Touchable {
+    func sendSMS() {
+        // from Cellular protocol
+    }
+    
+    func touchInput() {
+        // from Touchable protocol
+    }
+    
+    var phoneNo: String
+    
+    init(_ number: String) {
+        self.phoneNo = number
+    }
+}
