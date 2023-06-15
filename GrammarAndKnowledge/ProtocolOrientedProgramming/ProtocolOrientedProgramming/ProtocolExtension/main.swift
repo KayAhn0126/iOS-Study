@@ -9,7 +9,7 @@ import Foundation
 
 //MARK: 1. 프로토콜에서 아주 기본적인 속성이나 행동은 extension으로 미리 지정해주자!
 
- protocol Telephone {
+protocol Telephone {
     var phoneNo: String { get set }
     func call()
     func hangup()
