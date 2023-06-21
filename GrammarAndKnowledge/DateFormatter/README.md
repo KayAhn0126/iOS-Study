@@ -13,7 +13,7 @@ let currentDate = Date() // 2022-10-02 15:36:33 +0000 형식
 ```swift
 open func string(from date: Date) -> String
 
-open fun date(from string: String) -> Date? // 실패시 nil 반환
+open func date(from string: String) -> Date? // 실패시 nil 반환
 ```
 
 ## 🍎 String 타입에서 Date 타입으로
